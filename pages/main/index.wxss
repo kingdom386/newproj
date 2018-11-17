@@ -1,0 +1,67 @@
+/* pages/main/index.wxss */
+.slide_image{
+  display: block;
+  width: 750rpx;
+  height: 460rpx;
+  overflow: hidden;
+}
+.wx_grid{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+.wx_cols{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 25%;
+  height: 60px;
+  text-align: center;
+  color: #409EFF;
+}
+.wx_cols image {
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+}
+.wx_txt{
+  font-size: 24rpx;
+  line-height: 2;
+  color: #409EFF;
+}
+.cmp_intro{
+  padding: 40rpx;
+}
+
+.ptjs{
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+.ptjs_c{
+  font-size: 22rpx;
+  line-height: 40rpx;
+  color: #606266;
+  text-indent: 44rpx;
+}
+.img_box{
+  margin: 50rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img{
+  width: 389rpx;
+  height: 133rpx;
+}
+.ptjs_i{
+  font-size: 22rpx;
+  line-height: 1.8;
+  color: #606266;
+}

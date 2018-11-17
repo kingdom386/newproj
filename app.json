@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/main/index",
+    "pages/logs/logs",
+    "pages/mine/index",
+    "pages/vipcenter/index",
+    "pages/apply/index",
+    "pages/committee/index",
+    "pages/jinrong/index",
+    "pages/detail/index",
+    "pages/jinrongshenqing/index",
+    "pages/msg/msg",
+    "pages/coding/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "浙江省投融资协会",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#2d8cf0",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/main/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_s.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/coding/index",
+        "iconPath": "images/hd.png",
+        "selectedIconPath": "images/hd_s.png",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/coding/index",
+        "iconPath": "images/kf.png",
+        "selectedIconPath": "images/kf_s.png",
+        "text": "客服"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_s.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

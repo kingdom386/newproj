@@ -1,0 +1,82 @@
+/* pages/jinrong/index.wxss */
+
+page {
+  min-height: 100%;
+  background: #f1f1f1;
+}
+
+.weui-article__section {
+  margin: 0;
+  padding: 0 20rpx;
+  background: #fff;
+}
+
+.weui-article__h3 {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #303133;
+}
+
+.weui-article__p {
+  margin: 0;
+  padding-bottom: 0.8em;
+}
+
+.weui-article__p text {
+  display: block;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #909399;
+}
+
+.m20 {
+  margin-bottom: 20rpx;
+}
+
+.wx_pro_list {
+  padding: 10px 20px;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #303133;
+  border-bottom: 1px solid #dcdfe6;
+  background: #fff;
+}
+
+.view_box {
+  margin: 8rpx 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 8px;
+  flex-basis: 49%;
+  height: auto;
+  background: #fff;
+}
+
+.view_item image {
+  margin-bottom: 10px;
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.view_item text {
+  width: 100%;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: #303133;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}

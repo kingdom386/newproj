@@ -1,0 +1,14 @@
+<view class="weui-panel weui-panel_access">
+  <view wx:if="msg" class="weui-panel__bd">
+    <view wx:if="{{msg}}" wx:for="{{msg}}" class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+      <view class="weui-media-box__desc">{{item.content}}</view>
+    </view>
+  </view>
+
+  <view wx:else class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      暂无数据
+    </view>
+  </view>
+</view>

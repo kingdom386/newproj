@@ -1,0 +1,31 @@
+<view>
+  <view class="weui-article__section">
+    <view class="weui-article__h3">股权融资</view>
+    <view class="weui-article__p">
+      <text>1.初创期（天使轮、Pre-A轮、A轮）：天使投资、政府引 导基金、VC基金</text>
+      <text>2.成长期（B轮、C轮）：VC基金、PE基金 </text>
+      <text>3.成熟期（D轮、Pre-IPO）：PE基金、并购基金</text>
+    </view>
+  </view>
+  <view class="weui-article__section m20">
+    <view class="weui-article__h3">债权融资</view>
+    <view class="weui-article__p">
+      <text>1.银行信用：银行贷款、担保贷款、组合贷款、贸易贷款、委托贷款</text>
+      <text>2.债券融资：公募债券、私募债券 </text>
+      <text>3.信托融资：主动管理型信托、通道类信托</text>
+      <text>4.商业信用：应收账款收益权融资、商业票据融资</text>
+      <text>5.租赁：金融租赁、融资租赁</text>
+    </view>
+  </view>
+
+  <view class='wx_pro_list'>
+    产品介绍
+  </view>
+  <view class='view_box'>
+    <view wx:for="{{listData}}" class='view_item' data-id="{{item.id}}" bindtap='godetail' >
+      <image src='{{item.img}}'></image>
+      <text>{{item.name}}</text>
+    </view>
+    <!-- view_item -->
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<view>
+  <view class='de_box'>
+    <image src='{{deImg}}'></image>
+  </view>
+  <view class='de_intro'>
+    <view class='wx_title'>
+      <text>简介</text>
+    </view>
+    <view class='wx_content'>
+      {{intro}}
+    </view>
+  </view>
+  <view class='de_intro'>
+    <view class='wx_title'>
+      <text>优势</text>
+    </view>
+    <view class='wx_content'>
+      <text class='wx_content_txt'>{{ys}} </text>
+      
+    </view>
+  </view>
+  <view class='wx_btn_pane'>
+    <button style='background:#1296db;' class="weui-btn mini-btn" bindtap='apply' type="primary" size="mini">立即申请</button>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+/* pages/committee/index.wxss */
+
+/* image {
+  display: block;
+  width: 750rpx;
+  height: 420rpx;
+} */
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.wx_title {
+  position: relative;
+  margin: 8px auto;
+  height: 60rpx;
+  text-align: center;
+}
+
+.wx_title text {
+  position: relative;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #606266;
+}
+
+.wx_title text::before{
+  content: '';
+  position: absolute;
+  left: -110rpx;
+  top: 50%;
+  width: 100rpx;
+  height: 2px;
+  background: #DCDFE6;
+  transform: translate3d(0, -50%, 0);
+}
+
+.wx_title text::after{
+  content: '';
+  position: absolute;
+  right: -110rpx;
+  top: 50%;
+  width: 100rpx;
+  height: 2px;
+  background: #DCDFE6;
+  transform: translate3d(0, -50%, 0);
+} 
+.moduleBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 750rpx;
+  height: 300rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.bg_blue{
+  background: #409EFF;
+}
+
+.bg_green{
+  background: #67C23A;
+}
+
+.bg_ora{
+  background: #E6A23C;
+}

@@ -1,0 +1,43 @@
+<view class='my_box'>
+  <view class='my_info_panee'>
+    <view class='my_img_left'>
+      <view class='my_img'>
+        <image mode='scaleToFill' src='{{avatar}}'></image>
+      </view>
+    </view>
+    <!-- my_img_left -->
+    <view class='my_img_right'>
+      <text class="my_jr_title">{{username}}</text>
+      <text class="my_jr_sub">用户等级：Lv{{level}}</text>
+    </view>
+    <!-- my_img_right -->
+  </view>
+  <!-- my_info_panee -->
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <navigator url="../vipcenter/index?id={{userid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="../../images/center.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>会员中心</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <navigator url="../msg/msg?id={{userid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="../../images/msg.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>我的消息</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- my_box -->
