@@ -39,8 +39,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/main/index",
-					"pathName": "pages/mine/index",
+					"name": "page",
+					"pathName": "pages/activity_de/index",
 					"query": "jb=1",
 					"scene": "1001"
 				}

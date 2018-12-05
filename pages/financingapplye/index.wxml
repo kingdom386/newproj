@@ -1,0 +1,66 @@
+<view class="apply_box">
+  <view class='apply_form'>
+    <form>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">服务类型</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="服务类型" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">服务需求</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="服务需求" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">联系人</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="联系人" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="手机号码" />
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">验证码</view>
+          </view>
+          <view class="weui-cell__bd weui-code" style='padding-right: 200rpx;'>
+            <input class="weui-input" placeholder="验证码" />
+          </view>
+          <view class='send_code' hover-class="active">
+            发送验证码
+          </view>
+        </view>
+      </view>
+
+      <view class="button-sp-area">
+        <button style='background:#1296db;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">提交</button>
+        <button class="weui-btn mini-btn" formType="reset" size="mini">重置</button>
+      </view>
+      
+    </form>
+  </view>
+</view>

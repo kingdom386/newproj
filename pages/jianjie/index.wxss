@@ -1,0 +1,65 @@
+/* pages/jianjie/index.wxss */
+
+.jianjie_box {
+  padding: 20rpx;
+}
+
+.jianjie {
+  padding-left: 20rpx;
+  position: relative;
+  height: 60rpx;
+  width: 100%;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+
+.jianjie::before {
+  display: blcok;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4rpx;
+  height: 24rpx;
+  background: #409eff;
+  transform: translate3d(0, -50%, 0);
+}
+
+.intro_img {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.intro {
+  display: block;
+  width: 730rpx;
+  height: 200rpx;
+}
+
+.ptjs_c {
+  margin: 20rpx 0;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #606266;
+  text-indent: 44rpx;
+}
+
+.img {
+  display: block;
+  margin: 20rpx auto;
+  width: 389rpx;
+  height: 133rpx;
+}
+
+.ptjs {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+
+.ptjs_i {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #606266;
+}

@@ -1,0 +1,35 @@
+<view class="pay_box">
+  <view class='pay_form'>
+    <form>
+      <view class="weui-cells weui-cells_after-title margin_btm20">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">支付金额：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="number" placeholder="支付金额" />
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title padding15">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">支付选择</view>
+          </view>
+          <view class="weui-cell__bd">
+            <label class="radio">
+              <radio value="r2" />微信支付
+            </label>
+          </view>
+        </view>
+      </view>
+
+      <view class="button-sp-area">
+        <button style='background:#1296db;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">立即支付</button>
+        <button class="weui-btn mini-btn" formType="reset" size="mini">线下支付</button>
+      </view>
+
+    </form>
+  </view>
+</view>

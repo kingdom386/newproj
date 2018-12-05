@@ -1,0 +1,11 @@
+/* pages/process/index.wxss */
+
+.process_box {
+  padding: 20rpx;
+}
+
+.progress_item{
+  margin: 20rpx;
+  width: 80%;
+  height: auto
+}

@@ -23,7 +23,9 @@
   </view>
   <view class='view_box'>
     <view wx:for="{{listData}}" class='view_item' data-id="{{item.id}}" bindtap='godetail' >
-      <image src='{{item.img}}'></image>
+      <view class='view_img'>
+        <image mode="aspectFit" src='{{item.img}}'></image>
+      </view>
       <text>{{item.name}}</text>
     </view>
     <!-- view_item -->

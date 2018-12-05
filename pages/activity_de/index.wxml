@@ -1,0 +1,17 @@
+<view class="activity_de">
+  <view class='activity_img'>
+    <image class='banner_img' src='../../images/b2.jpg'></image>
+    <!--  -->
+    <view class='de_title'>
+      <view class='de_left'>
+        <image class='banner_logo' src='../../images/c2.jpg'></image>
+      </view>
+      <view class="de_content">
+        <view class='title'>紫蓬山景区来自我们的李连杰</view>
+        <view class='de_other margin-btm20'>紫蓬山景区</view>
+        <view class='de_other'>紫蓬山景区</view>
+      </view>
+    </view>
+  </view>
+
+</view>

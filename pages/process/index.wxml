@@ -1,0 +1,5 @@
+<view calss="process_box">
+  <view class='progress_item'>
+    <image mode='aspectFit' src="../../images/avatar.jpg"></image>
+  </view>
+</view>

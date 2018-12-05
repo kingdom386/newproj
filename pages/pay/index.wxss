@@ -1,0 +1,26 @@
+/* pages/pay/index.wxss */
+
+.pay_form {
+  margin: 50rpx auto;
+  width: 80%;
+}
+
+.margin_btm20 {
+  margin-bottom: 20rpx;
+}
+
+.padding15 {
+  padding: 15rpx 0;
+}
+
+.button-sp-area {
+  text-align: center;
+}
+
+.button-sp-area button {
+  margin-right: 8px;
+}
+
+.button-sp-area button:last-child {
+  margin-right: 0;
+}

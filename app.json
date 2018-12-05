@@ -10,7 +10,21 @@
     "pages/detail/index",
     "pages/jinrongshenqing/index",
     "pages/msg/msg",
-    "pages/coding/index"
+    "pages/coding/index",
+    "pages/index/index",
+    "pages/agreement/index",
+    "pages/consultation/index",
+    "pages/jianjie/index",
+    "pages/search/index",
+    "pages/pay/index",
+    "pages/financing /index",
+    "pages/financingapplye/index",
+    "pages/process/index",
+    "pages/jinrongliucheng/indnex",
+    "pages/jinrongliucheng/index",
+    "pages/exemption /index",
+    "pages/activity/index",
+    "pages/activity_de/index"
   ],
   "window": {
     "navigationBarTitleText": "浙江省投融资协会",
@@ -31,7 +45,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/coding/index",
+        "pagePath": "pages/activity/index",
         "iconPath": "images/hd.png",
         "selectedIconPath": "images/hd_s.png",
         "text": "活动"

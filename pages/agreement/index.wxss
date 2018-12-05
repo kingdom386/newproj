@@ -1,0 +1,7 @@
+/* pages/agreement/index.wxss */
+view {
+  padding: 20rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  text-indent: 48rpx;
+}

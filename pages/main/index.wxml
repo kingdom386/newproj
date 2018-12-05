@@ -32,7 +32,80 @@
       </view>
     </view>
   </view>
-  <view class='cmp_intro'>
+
+  <view class='com_intro'>
+    <view class='com_title'>协会简介</view>
+    <view class='com_box'>
+      <image class='com_logo' mode='aspectFit' src='../../images/timg.jpeg'></image>
+      <view class='com_content'>
+        <view class='txt_content'>
+          浙江省投融资协会成立于2011年8月，是由中国东方资产管理公司杭州办事处和多家银行以及浙江省企业家协会、浙江省中小企业协会共同发起，经浙江省民政厅批准设立，并受浙江省经济和信息化委员会主管的社团法人组织。
+        </view>
+        <view class='txt_content'>
+          目前协会下属二级机构有：科技金融专委会、特殊资产专委会、房地产金融专委会、连锁产业科技创投专委会。通过协会服务平台——投融天下...
+          <text class='txt_detail' bindtap='detail'> 【详情】</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='com_intro'>
+    <view class='com_title'>咨讯中心</view>
+    <view class='tab_box'>
+      <view bindtap='tab_change' data-index="1" class='tab_item active'>协会动态</view>
+      <view bindtap='tab_change' data-index="2" class='tab_item'>活动速递</view>
+      <view bindtap='tab_change' data-index="3" class='tab_item'>服务案例</view>
+    </view>
+    <!-- tab_box -->
+    <view class='info_swiper'>
+      <view class='info_item'>
+        <view class='info_dot'></view>
+        <view class="info_txt">[小游戏源码]微信小游戏星图源码学习微信小游戏星图源码学习</view>
+        <view class='info_date'>2018-11-29</view>
+      </view>
+      <!-- info_item -->
+      <view class='info_item'>
+        <view class='info_dot'></view>
+        <view class="info_txt">[小游戏源码]微信小游戏星图源码学习微信小游戏星图源码学习</view>
+        <view class='info_date'>2018-11-29</view>
+      </view>
+      <!-- info_item -->
+      <view class='info_item'>
+        <view class='info_dot'></view>
+        <view class="info_txt">[小游戏源码]微信小游戏星图源码学习微信小游戏星图源码学习</view>
+        <view class='info_date'>2018-11-29</view>
+      </view>
+      <!-- info_item -->
+      <view class='info_item'>
+        <view class='info_dot'></view>
+        <view class="info_txt">[小游戏源码]微信小游戏星图源码学习微信小游戏星图源码学习</view>
+        <view class='info_date'>2018-11-29</view>
+      </view>
+      <!-- info_item -->
+    </view>
+  </view>
+
+  <view class='com_intro'>
+    <view class='com_title'>会员企业展示 <view style='float: right;' bindtap='search'><i class="iconfont icon-enter"></i></view></view>
+    <view class='swiper_box'>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="9000" duration="0" display-multiple-items="2">
+        <swiper-item class="wx_swiper_item">
+         1
+        </swiper-item>
+        <swiper-item class="wx_swiper_item">
+          2
+        </swiper-item>
+        <swiper-item class="wx_swiper_item">
+          3
+        </swiper-item>
+        <swiper-item class="wx_swiper_item">
+          更多推荐
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <!-- wx_grid -->
+  <!-- <view class='cmp_intro'>
     <view class='ptjs'>平台介绍</view>
     <view class='ptjs_c'>浙江省投融资协会成立于2011年8月，是由中国东方资产管理公司杭州办事处和多家银行以及浙江省企业家协会、浙江省中小企业协会共同发起，经浙江省民政厅批准设立，并受浙江省经济和信息化委员会主管的社团法人组织。</view>
     <view class='ptjs_c'>目前协会下属二级机构有：科技金融专委会、特殊资产专委会、房地产金融专委会、连锁产业科技创投专委会。通过协会服务平台——投融天下，以线上智能数据库和线下优选服务群为两翼，通过发挥第三方平台的牵头、纽带和服务功能，整合各种资源，加强信息沟通、人际交流和业务合作，组织开发投融资产品、创新投融资模式、拓展投融资市场，促进金融（类金融）机构和其他企业的发展壮大而创造有利条件，提供有效服务。</view>
@@ -43,5 +116,6 @@
     <view class='ptjs_i'>1、财政资金增信、金融机构增资——为舟山定海、绍兴新昌等地经政府推荐、协会初审和金融机构审定的100多户中小企业发放贷款4亿元；</view>
     <view class='ptjs_i'>2、优质集团企业担保、金融机构出资——为担保企业的近百户上下游中小企业融资近2亿元；</view>
     <view class='ptjs_i'>3、“诺亚方舟—中小企业抱团融资555计划”——累计为5000多户小微企业发放信用贷款近30亿元。</view>
-  </view>
+  </view> -->
+  <!-- cmp_intro -->
 </view>

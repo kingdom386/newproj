@@ -1,10 +1,25 @@
 Page({
   data: {
     imgUrls: [],
+    swiperImg: '../../images/c1.jpg',
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    aa: [
+      {
+        nickName: "wang",
+        reward: "2"
+      },
+      {
+        nickName: "wang",
+        reward: "2"
+      },
+      {
+        nickName: "wang",
+        reward: "2"
+      }
+    ],
   },
   onLoad: function () {
     wx.setNavigationBarTitle({
@@ -75,6 +90,19 @@ Page({
       title: '消息提示',
       content: '功能正在开发，敬请期待',
       showCancel: false
+    })
+  },
+  detail: function () {
+    wx.navigateTo({
+      url: '../jianjie/index',
+    })
+  },
+  tab_change: function (e) {
+    console.log(typeof (e.currentTarget.dataset.index))
+  },
+  search: function () {
+    wx.navigateTo({
+      url: '../search/index',
     })
   }
 })

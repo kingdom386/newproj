@@ -1,0 +1,34 @@
+<view>
+  <image src='{{avatarData}}' mode="aspectFill"></image>
+  <view class='register_info'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" placeholder="请输入手机号码" />
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" placeholder="请输入验证码" />
+            <view hover-class="btnactive" class='send_code'>发送验证码</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <label class="checkbox">
+          <checkbox value="cb" /><text bindtap='goagree'>同意本平台协议</text>
+        </label>
+      </view>
+
+      <view class="button-sp-area">
+        <button class="mini-btn confirm_btn" size="mini">确认</button>
+        <button class="mini-btn" type="warn" size="mini">跳过</button>
+      </view>
+    </form>
+  </view>
+</view>

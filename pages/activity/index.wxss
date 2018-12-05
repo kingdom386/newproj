@@ -1,0 +1,115 @@
+/* pages/activity/index.wxss */
+
+page {
+  background: #f1f1f1;
+}
+
+.activity_box {
+  padding: 20rpx 20rpx 60rpx;
+}
+
+.activity_list {
+  overflow: hidden;
+  background: #fff;
+}
+
+.activity_title {
+  position: relative;
+  padding-left: 200rpx;
+  width: auto;
+  height: 80rpx;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #dcdfe6;
+}
+
+.activity_log {
+  position: absolute;
+  z-index: 5;
+  top: 20rpx;
+  left: 20rpx;
+  display: blcok;
+  width: 150rpx;
+  height: 150rpx;
+  overflow: hidden;
+  border: 10rpx solid #fff;
+}
+
+.activity_xc {
+  width: 750rpx;
+  height: 460rpx;
+  overflow: hidden;
+}
+
+.activity_info_pane {
+  overflow: hidden;
+}
+
+.acrivity_info_title {
+  padding: 0 10rpx;
+  width: atuo;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #606266;
+  overflow: hidden;
+}
+
+.info_left {
+  float: left;
+}
+
+.info_right {
+  padding: 0 10rpx;
+  float: right;
+  width: auto;
+  height: 40rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #409eff;
+  border-radius: 10rpx;
+}
+
+.progress-box {
+  padding: 10rpx;
+}
+
+.activity_state {
+  padding: 0 10rpx;
+  display: flex;
+  height: 60rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+}
+
+.activity_state em {
+  font-size: 26rpx;
+  font-style: 600;
+}
+
+.state_left {
+  flex-basis: 50%;
+}
+
+.state_right {
+  flex-basis: 50%;
+  text-align: right;
+}
+
+.color_red {
+  color: #f56c6c;
+}
+
+.color_ora {
+  color: #e6a23c;
+}
+
+.margin_lt20 {
+  margin-left: 20rpx;
+}
+
+.margin_btm20 {
+  margin-bottom: 20rpx;
+}

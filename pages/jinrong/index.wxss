@@ -62,11 +62,15 @@ page {
   height: auto;
   background: #fff;
 }
-
+/* .view_item .view_img {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+} */
 .view_item image {
-  margin-bottom: 10px;
-  width: 180rpx;
-  height: 180rpx;
+  display: block;
+  width: 300rpx;
+  height: 240rpx;
 }
 
 .view_item text {

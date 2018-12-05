@@ -1,0 +1,40 @@
+/* pages/financingapplye/index.wxss */
+
+.apply_form {
+  margin: 80rpx auto;
+  width: 80%;
+}
+
+.weui-code {
+  position: relative;
+}
+
+.send_code {
+  position: absolute;
+  right: 0;
+  top: 20rpx;
+  height: 60rpx;
+  width: 160rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #409eff;
+  color: #fff;
+  border-radius: 10rpx;
+}
+
+.active {
+  opacity: 0.8;
+}
+
+.button-sp-area {
+  text-align: center;
+}
+
+.button-sp-area button {
+  margin-right: 8px;
+}
+
+.button-sp-area button:last-child {
+  margin-right: 0;
+}

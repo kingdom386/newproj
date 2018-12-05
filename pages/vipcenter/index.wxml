@@ -1,86 +1,73 @@
 <view class='center_box'>
   <image src='../../images/vipcenter.jpeg'></image>
   <!-- center_box -->
-  <view class='lists_wx'>
-    <view class='list_box'>
-      <view class='list_item' v-if='{{value === "1"}}' bindtap='swichpage' data-index='1'>
-        <view class='list_left'>初级会员</view>
-        <view class='list_right'>
-          <button style='background:#1296db;' bindtap='apply' data-jb='1' class='wx_btn weui-btn mini-btn' type='primary' size='mini'>申请</button>
-        </view>
-      </view>
-      <!-- list_item -->
-      <view class='list_sub_item {{value === "1" ? "" : "disnone"}}'>
-        <text>1.预备会员所有权益;</text>
-        <text>2.全年免费在线发布投融或附加服务需求;</text>
-        <text>3.免费享有专家在线咨询服务一次;</text>
-        <text>4.免费享有企业、项目在线普通宣传一次;</text>
-        <text>5.免费享有在线资料分享;</text>
-        <text>6.享有专项投融或附加服务9.5折优惠;</text>
-        <text>7.投融小助手7*12小时免费服务（9：00-21：00;</text>
-        <text>8.对协会工作的监督权;</text>
-      </view>
-      <!-- list_sub_item -->
+  <view class='vip_jb'>
+    <view class='vip_route'>
+      <view class='vip_dot dot {{curIndex == 0 ? "active" : ""}}' ></view>
+      <view class='vip_dot dot {{curIndex == 1 ? "active" : ""}}'></view>
+      <view class='vip_dot dot {{curIndex == 2 ? "active" : ""}}'></view>
+      <view class='vip_dot vip_tj dot {{curIndex == 3 ? "active" : (curIndex === 4 ? "last" : "")}}'></view>
     </view>
-    <!-- list_box -->
-    <view class='list_box'>
-      <view class='list_item'>
-        <view class='list_left' v-if='{{value === "2"}}' bindtap='swichpage' data-index='2'>中级会员</view>
-        <view class='list_right'>
-          <button style='background:#1296db;'  bindtap='apply' data-jb='2' class='wx_btn weui-btn mini-btn' type='primary' size='mini'>申请</button>
-        </view>
-      </view>
-      <!-- list_item -->
-      <view class='list_sub_item {{value === "2" ? "" : "disnone"}}'>
-        <text>1.初级会员所有权益;</text>
-        <text>2.项目、机构、专家等资源优先对接权;</text>
-        <text>3.免费享有对接金融、类金融机构中、高级管理人员一次;</text>
-        <text>4.免费享有企业、项目在线重点宣传一次;</text>
-        <text>5.免费参与协会大型年会或主题峰会活动一次;</text>
-        <text>6.免费享有内部交流，或项目演示，或研讨活动一次;</text>
-        <text>7.享有专项投融或附加服务9折优惠;</text>
-      </view>
-      <!-- list_sub_item -->
+    <view class='vip_jb_txt'>
+      <view class='vip_dj'>预备会员</view>
+      <view class='vip_dj'>初级会员</view>
+      <view class='vip_dj'>中级会员</view>
+      <view class='vip_dj'>高级会员</view>
+      <view class='vip_dj'>特级会员</view>
     </view>
-    <!-- list_box -->
-    <view class='list_box'>
-      <view class='list_item'>
-        <view class='list_left' v-if='{{value === "3"}}' bindtap='swichpage' data-index='3'>高级会员</view>
-        <view class='list_right'>
-          <button style='background:#1296db;' bindtap='apply' data-jb='3' class="wx_btn weui-btn mini-btn" type="primary" size="mini">申请</button>
-        </view>
-      </view>
-      <!-- list_item -->
-      <view class='list_sub_item {{value === "3" ? "" : "disnone"}}'>
-        <text>1.中级会员所有权益;</text>
-        <text>2.免费参与投融精英专享高端商务活动一次;</text>
-        <text>3.免费享有企业、项目在线特别推荐一次;</text>
-        <text>4.免费享有一对一对接金融、类金融机构中、高级管理人员一次;</text>
-        <text>5.享有知名专家授课或高端培训最惠待遇一次;</text>
-        <text>6.享有专项投融或附加服务8.5折优惠;</text>
-        <text>7.享有专属投融小助手7*12小时一对一服务;</text>
-      </view>
-      <!-- list_sub_item -->
-    </view>
-    <!-- list_box -->
-    <view class='list_box'>
-      <view class='list_item'>
-        <view class='list_left' v-if='{{value === "4"}}' bindtap='swichpage' data-index='4'>特级会员</view>
-        <view class='list_right'>
-          <button style='background:#1296db;' bindtap='apply' data-jb='4' class="wx_btn weui-btn mini-btn" type="primary" size="mini">申请</button>
-        </view>
-      </view>
-      <!-- list_item -->
-      <view class='list_sub_item {{value === "4" ? "" : "disnone"}}'>
-        <text>1.高级会员所有权益;</text>
-        <text>2.享有企业形象宣传专访报道一次;</text>
-        <text>3.免费享有金融类业务内部高端培训一次;</text>
-        <text>4.免费享有专家诊断服务一次;</text>
-        <text>5.享有投融产品定制服务;</text>
-        <text>6.享有专项投融或附加服务8折优惠;</text>
-      </view>
-      <!-- list_sub_item -->
-    </view>
-    <!-- list_box -->
+  </view>
+  <view class='swiper_box'>
+    <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" bindchange="intervalChange" duration="{{duration}}">
+      <block>
+        <swiper-item>
+          <view class='dj_title'>会员权益</view>
+          <view class='dj_sub'>1、免费浏览、获取协会服务平台（投融天下）资源库信息；</view>
+          <view class='dj_sub'>2、在线一般性免费咨询服务；</view>
+          <view class='dj_sub'>3、各种单项专业平价收费服务。</view>
+        </swiper-item>
+        <swiper-item>
+          <view class='dj_title'>会员权益</view>
+          <view class='dj_sub'>1、预备会员所有权益；</view>
+          <view class='dj_sub'>2、全年免费在线发布投融或附加服务需求；</view>
+          <view class='dj_sub'>3、免费享有专家在线咨询服务一次；</view>
+          <view class='dj_sub'>4、免费享有企业、项目在线普通宣传一次；；</view>
+          <view class='dj_sub'>5、免费享有在线资料分享；</view>
+          <view class='dj_sub'>6、享有专项投融或附加服务9.5折优惠；</view>
+          <view class='dj_sub'>7、投融小助手7*12小时免费服务（9：00-21：00）；</view>
+          <view class='dj_sub'>8、对协会工作的监督权；</view>
+        </swiper-item>
+        <swiper-item>
+          <view class='dj_title'>会员权益</view>
+          <view class='dj_sub'>1、初级会员所有权益；</view>
+          <view class='dj_sub'>2、项目、机构、专家等资源优先对接权；</view>
+          <view class='dj_sub'>3、免费享有对接金融、类金融机构中、高级管理人员一次；</view>
+          <view class='dj_sub'>4、免费享有企业、项目在线重点宣传一次；</view>
+          <view class='dj_sub'>5、免费参与协会大型年会或主题峰会活动一次；</view>
+          <view class='dj_sub'>6、免费享有内部交流，或项目演示，或研讨活动一次；</view>
+          <view class='dj_sub'>7、享有专项投融或附加服务9折优惠；</view>
+        </swiper-item>
+        <swiper-item>
+          <view class='dj_title'>会员权益</view>
+          <view class='dj_sub'>1、中级会员所有权益；</view>
+          <view class='dj_sub'>2、免费参与投融精英专享高端商务活动一次；</view>
+          <view class='dj_sub'>3、免费享有企业、项目在线特别推荐一次；</view>
+          <view class='dj_sub'>4、免费享有一对一对接金融、类金融机构中、高级管理人员 一次；
+
+          </view>
+          <view class='dj_sub'>5、享有知名专家授课或高端培训最惠待遇一次；</view>
+          <view class='dj_sub'>6、享有专项投融或附加服务8.5折优惠；</view>
+          <view class='dj_sub'>7、享有专属投融小助手7*12小时一对一服务；</view>
+        </swiper-item>
+        <swiper-item>
+          <view class='dj_title'>会员权益</view>
+          <view class='dj_sub'>1、高级会员所有权益；</view>
+          <view class='dj_sub'>2、享有企业形象宣传专访报道一次；</view>
+          <view class='dj_sub'>3、免费享有金融类业务内部高端培训一次；</view>
+          <view class='dj_sub'>4、免费享有专家诊断服务一次；</view>
+          <view class='dj_sub'>5、享有投融产品定制服务；</view>
+          <view class='dj_sub'>6、享有专项投融或附加服务8折优惠；</view>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 </view>
