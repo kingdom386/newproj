@@ -1,0 +1,13 @@
+<!--pages/zixuncenter/index.wxml-->
+
+<view class='zixun_box'>
+  <view class='zi_title'>{{listData.title}}</view>
+  <view class='date'>发表时间：{{listData.addTime}} <view wx:if='{{col&&listData.isCollect === "0"}}' bindtap='collect' data-id='{{listData.id}}' class='iconfont icon-collection collstar'></view>
+  <view wx:else class='iconfont icon-collection_fill collstar'></view>
+  </view>
+  <view wx:if='{{listData.img}}' class='img'>
+    <image mode='widthFix' src='{{listData.img}}'  style='backgroud:#909399'></image>
+  </view>
+  <import src="../../wxParse/wxParse.wxml"/>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

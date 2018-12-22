@@ -1,0 +1,59 @@
+/* pages/financing /index.wxss */
+
+/* pages/committee/index.wxss */
+
+/* image {
+  display: block;
+  width: 750rpx;
+  height: 420rpx;
+} */
+
+@import '../../lib/icon.wxss';
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.wx_title {
+  position: relative;
+  margin: 8px auto;
+  height: 60rpx;
+  text-align: center;
+}
+
+.wx_title text {
+  position: relative;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #606266;
+}
+
+.moduleBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.bg_blue {
+  background: #409eff;
+}
+
+.bg_green {
+  background: #67c23a;
+}
+
+.bg_ora {
+  background: #e6a23c;
+}
+
+.fixed_box{
+  position: fixed;
+  z-index: 90;
+  right: 20rpx;
+  top: 60%;
+  font-size: 100rpx;
+  line-height: 100rpx;
+  color: #bc824c;
+}

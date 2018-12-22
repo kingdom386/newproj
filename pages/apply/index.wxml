@@ -2,7 +2,7 @@
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
-        <view class="weui-label">联系人：</view>
+        <view class="weui-label">*联系人：</view>
       </view>
       <view class="weui-cell__bd">
         <input class="weui-input" bindblur='checkuser' name="username" placeholder="请输入联系人" />
@@ -13,26 +13,26 @@
 
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
-        <view class="weui-label">手机号码：</view>
+        <view class="weui-label">*手机号码：</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" bindblur='checkmobile' name="phone" placeholder="手机号码：" />
+        <input class="weui-input" bindblur='checkmobile' name="phone" placeholder="请输入手机号码" />
       </view>
       <view wx:if="{{!showmobilerror}}" class="weui-cell__ft">
       </view>
     </view>
 
-    <!-- <view class="weui-cell weui-cell_input weui-cell_vcode">
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
       <view class="weui-cell__hd">
-        <view class="weui-label">验证码：</view>
+        <view class="weui-label">*验证码：</view>
       </view>
       <view class="weui-cell__bd">
         <input class="weui-input" bindblur='checkcode' name="code" placeholder="请输入验证码" />
       </view>
       <view class="weui-cell__ft">
-        <view class="weui-vcode-btn">{{msg}}</view>
+        <view bindtap='sendcode' style='width: 180rpx; text-align: center;' class="weui-vcode-btn">{{msg}}</view>
       </view>
-    </view> -->
+    </view>
 
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -41,7 +41,7 @@
       <view class="weui-uploader__bd margin10">
         <view class="weui-uploader__files" id="uploaderFiles">
           <block wx:for="{{qyjs}}" wx:key="*this">
-            <view class="weui-uploader__file" id="{{item}}"> 
+            <view class="weui-uploader__file" id="{{item}}">
               <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
             </view>
           </block>
@@ -59,23 +59,23 @@
       <view class="weui-cell__bd">
         <view class="weui-uploader__files">
           <block wx:for="{{front}}" wx:key="*this">
-            <view class="weui-uploader__file" bindtap="previewImage"> 
+            <view class="weui-uploader__file" bindtap="previewImage">
               <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
             </view>
           </block>
         </view>
         <view class="weui-uploader__input-box {{showidcardfront ? '':'disnone'}}">
-          <view class="weui-uploader__input" data-img="front"  bindtap="chooseImage"></view>
+          <view class="weui-uploader__input" data-img="front" bindtap="chooseImage"></view>
         </view>
         <view class="weui-uploader__files">
           <block wx:for="{{back}}" wx:key="*this">
-            <view class="weui-uploader__file" bindtap="previewImage"> 
+            <view class="weui-uploader__file" bindtap="previewImage">
               <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
             </view>
           </block>
         </view>
         <view class="weui-uploader__input-box {{showidcardback ? '':'disnone'}}">
-          <view class="weui-uploader__input" data-img="back"  bindtap="chooseImage"></view>
+          <view class="weui-uploader__input" data-img="back" bindtap="chooseImage"></view>
         </view>
       </view>
     </view>
@@ -87,7 +87,7 @@
       <view class="weui-cell__bd">
         <view class="weui-uploader__files">
           <block wx:for="{{yyzz}}" wx:key="*this">
-            <view class="weui-uploader__file" bindtap="previewImage"> 
+            <view class="weui-uploader__file" bindtap="previewImage">
               <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
             </view>
           </block>
@@ -97,10 +97,10 @@
         </view>
       </view>
     </view>
-  
+
   </view>
   <view class="button-sp-area">
-    <button style='background:#1296db;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">提交</button>
+    <button style='background:#cd935c;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">提交</button>
     <button class="weui-btn mini-btn" formType="reset" type="warn" size="mini">重置</button>
   </view>
 </form>

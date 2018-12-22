@@ -2,17 +2,25 @@
   <view bindtap='coding' class='wx_title'>
     <text>专委会介绍</text>
   </view>
-  <view bindtap='coding' class='moduleBox mb10 bg_blue'>
-    <text>科技金融专委会</text>
-  </view>
-  <view bindtap='coding' class='moduleBox mb10 bg_green'>
-    <text>特殊资产专委会</text>
-  </view>
-  <view bindtap='coding' class='moduleBox mb10 bg_ora'>
-    <text>房地产金融专委会</text>
-  </view>
-  <view bindtap='coding' class='moduleBox mb10 bg_blue'>
-    <text>连锁产业科技创投专委会</text>
-  </view>
-</view>
 
+  <view bindtap='coding' class='moduleBox mb10'>
+    <!-- <text>科技金融专委会</text> -->
+    <image style='width: 100%; width:715rpx;height: 256rpx;' src='../../images/kj.gif'></image>
+  </view>
+
+  <view bindtap='coding' class='moduleBox mb10'>
+    <!-- <text>科技金融专委会</text> -->
+    <image style='width: 100%; width:715rpx;height: 256rpx;' src='../../images/tz.gif'></image>
+  </view>
+
+   <view bindtap='coding' class='moduleBox mb10'>
+    <!-- <text>科技金融专委会</text> -->
+    <image style='width: 100%; width:715rpx;height: 256rpx;' src='../../images/fdc.gif'></image>
+  </view>
+
+   <view bindtap='coding' class='moduleBox mb10'>
+    <!-- <text>科技金融专委会</text> -->
+    <image style='width: 100%; width:715rpx;height: 256rpx;' src='../../images/ls.gif'></image>
+  </view>
+
+</view>

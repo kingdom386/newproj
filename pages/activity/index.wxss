@@ -5,7 +5,7 @@ page {
 }
 
 .activity_box {
-  padding: 20rpx 20rpx 60rpx;
+  padding: 20rpx 0 160rpx;
 }
 
 .activity_list {
@@ -15,10 +15,11 @@ page {
 
 .activity_title {
   position: relative;
-  padding-left: 200rpx;
+  padding-left: 20rpx;
+  /* padding-left: 200rpx; */
   width: auto;
   height: 80rpx;
-  font-size: 26rpx;
+  font-size: 28rpx;
   line-height: 80rpx;
   border-bottom: 1px solid #dcdfe6;
 }
@@ -29,15 +30,16 @@ page {
   top: 20rpx;
   left: 20rpx;
   display: blcok;
-  width: 150rpx;
-  height: 150rpx;
+  width: 100rpx;
+  height: 100rpx;
   overflow: hidden;
   border: 10rpx solid #fff;
 }
 
 .activity_xc {
-  width: 750rpx;
-  height: 460rpx;
+  width: 100%;
+  height: 400rpx;
+  background: #909399;
   overflow: hidden;
 }
 
@@ -62,12 +64,13 @@ page {
 .info_right {
   padding: 0 10rpx;
   float: right;
-  width: auto;
+  min-width: 100rpx;
   height: 40rpx;
+  text-align: center;
   font-size: 24rpx;
   line-height: 40rpx;
   color: #fff;
-  background: #409eff;
+  background: #cc935c;
   border-radius: 10rpx;
 }
 
@@ -90,11 +93,11 @@ page {
 }
 
 .state_left {
-  flex-basis: 50%;
+  flex-basis: 70%;
 }
 
 .state_right {
-  flex-basis: 50%;
+  flex-basis: 30%;
   text-align: right;
 }
 
@@ -112,4 +115,36 @@ page {
 
 .margin_btm20 {
   margin-bottom: 20rpx;
+}
+
+.underline {
+  margin: 0 auto;
+  width: 40%;
+  position: relative;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #909399;
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  width: 170rpx;
+  height: 1px;
+  left: -170rpx;
+  top: 50%;
+  background: #909399;
+  transform: translate3d(0, -50%, 0);
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  width: 170rpx;
+  height: 1px;
+  right: -170rpx;
+  top: 50%;
+  background: #909399;
+  transform: translate3d(0, -50%, 0);
 }

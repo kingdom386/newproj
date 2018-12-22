@@ -1,0 +1,49 @@
+<view class="contact_us">
+  <image class='img' src='http://i1.bvimg.com/671793/eb0869f38945dfd7.jpg'></image>
+  <view style='background: #fff;'>
+    <view class='box'>
+      <view class='left'>
+        <i class='iconfont icon-phone' style='float:left;font-size: 44rpx;line-height: 40rpx;margin-right: 10rpx;'></i>联系电话：</view>
+      <view bindtap='gocall' class='right color_blue'>0571-85261234</view>
+    </view>
+    <view class='box'>
+      <view class='left'>
+        <i class='iconfont icon-youxiang' style='float:left;font-size: 44rpx;line-height: 40rpx;margin-right: 10rpx;'></i>电子邮箱：</view>
+      <view class='right'>trtxassistant@zjtrtx.com</view>
+    </view>
+    <view class='box'>
+      <view class='left'>
+        <i class='iconfont icon-dizhi' style='float:left;font-size: 44rpx;line-height: 40rpx;margin-right: 10rpx;'></i>联系地址：</view>
+      <view class='right'>浙江省杭州市下城区体育场路407号万华行政3楼
+      </view>
+    </view>
+  </view>
+
+  <view style='background: #fff;margin-top: 20rpx;'>
+    <view class='box'>
+      <view class='infos' style='padding-left: 10rpx;font-size: 26rpx;color: #333;'>
+       支付账户信息</view>
+    </view>
+    <view class='box'>
+      <view class='left'>
+        账户名：</view>
+      <view bindtap='gocall' class='right'>浙江省投融资协会</view>
+    </view>
+    <view class='box'>
+      <view class='left'>
+        <i class='iconfont icon-youxiang' style='float:left;font-size: 44rpx;line-height: 40rpx;margin-right: 10rpx;'></i>账号：</view>
+      <view class='right'>78508100394837</view>
+    </view>
+    <view class='box'>
+      <view class='left'>
+        <i class='iconfont icon-dizhi' style='float:left;font-size: 44rpx;line-height: 40rpx;margin-right: 10rpx;'></i>开户行：</view>
+      <view class='right'>杭州银行高新支行
+      </view>
+    </view>
+  </view>
+
+  <view class='mt40 m20'>
+    <button open-type='contact' style='background: #cc935c;color:#fff;'>在线客服</button>
+  </view>
+
+</view>

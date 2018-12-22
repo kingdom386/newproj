@@ -1,0 +1,19 @@
+/* pages/msgde/inde.wxss */
+
+.msgde_box {
+  padding: 20rpx;
+}
+
+.msgde_title{
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #333;
+  text-align: center;
+}
+
+.msgde_content{
+  text-indent: 52rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #606266;
+}

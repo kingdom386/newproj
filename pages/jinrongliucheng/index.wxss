@@ -1,1 +1,5 @@
 /* pages/jinrongliucheng/index.wxss */
+.box{
+  padding: 50rpx 20rpx;
+  text-align: center;
+}

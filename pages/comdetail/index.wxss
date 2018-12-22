@@ -1,0 +1,7 @@
+/* pages/comdetail/index.wxss */
+@import "../../wxParse/wxParse.wxss";
+.com_box{
+  padding:  20rpx 10rpx;
+  overflow: hidden;
+  font-size: 26rpx;
+}

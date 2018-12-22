@@ -1,0 +1,97 @@
+/* pages/myapply/index.wxss */
+
+page {
+  background: #f1f1f1;
+}
+
+.tab_btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  background: #fff;
+  border-bottom: 2px solid #dcdfe6;
+}
+
+.tab_item {
+  position: relative;
+  flex-basis: 50%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 8;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid #cc935c;
+}
+
+.swiper_box {
+  padding: 20rpx;
+  margin-top: 100rpx;
+  background: #fff;
+}
+
+.swiper_item {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  height: 160rpx;
+  border-bottom: 1px solid #dcdfe6;
+}
+
+.swiepr_left {
+  flex-basis: 65%;
+}
+
+.left_title {
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+
+.swiper_right {
+  flex-basis: 35%;
+  text-align: center;
+}
+
+.opera_btn {
+  padding: 0 !important;
+  margin-top: 20rpx;
+  width: 170rpx;
+  background: #cc935c;
+  color: #fff;
+
+}
+
+.margin-rt {
+  margin-right: 15rpx;
+}
+
+.color_gray {
+  color: #909399;
+}
+
+.nodata {
+  background: #fff;
+  text-align: center;
+  height: 200rpx;
+  font-size: 30rpx;
+  line-height: 200rpx;
+  color: #606266;
+}

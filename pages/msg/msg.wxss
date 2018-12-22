@@ -1,1 +1,30 @@
 /* pages/msg/msg.wxss */
+
+.weui-media-box {
+  position: relative;
+  padding-left: 60rpx;
+}
+
+.dot {
+  position: absolute;
+  left: 20rpx;
+  top: 50%;
+  width: 10rpx;
+  height: 10rpx;
+  background: #cd935c;
+  transform: translate3d(0, -50%, 0);
+  border-radius: 20rpx;
+}
+
+.weui-panel:after {
+  border-bottom: none;
+}
+
+.weui-media-box__desc {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}

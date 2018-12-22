@@ -1,0 +1,59 @@
+/* pages/contact/index.wxss */
+@import '../../lib/icon.wxss';
+
+page {
+  background: #f1f1f1;
+}
+
+.img {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+.box {
+  position: relative;
+  margin: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  padding: 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333;
+  border-bottom: 1px solid #f2f6fc;
+}
+
+.box:last-child {
+  border-bottom: none;
+}
+
+.left {
+  flex-basis: 30%;
+}
+
+.right {
+  flex-basis: 70%;
+}
+
+.color_blue {
+  color: #409eff;
+}
+
+.infos::before {
+  position: absolute;
+  left: 20rpx;
+  top: 27rpx;
+  content: '';
+  width: 3px;
+  height: 26rpx;
+  background: #cc935c;
+}
+
+.mt40{
+  margin-top: 40rpx;
+}
+.m20{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}

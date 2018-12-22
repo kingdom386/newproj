@@ -1,13 +1,16 @@
 <view class="weui-panel weui-panel_access">
-  <view wx:if="msg" class="weui-panel__bd">
-    <view wx:if="{{msg}}" wx:for="{{msg}}" class="weui-media-box weui-media-box_text">
-      <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+  <view wx:if="{{msg}}" class="weui-panel__bd">
+    <view bindtap='gode' data-id='{{item.id}}'  data-title='{{item.title}}' data-content='{{item.content}}'  wx:for="{{msg}}" wx:for-item="item" class="weui-media-box weui-media-box_text">
+      <view wx:if="{{item.isRead === '0'}}" class='dot'></view>
+      <view style='font-size: 28rpx;' class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}
+        <view style='font-size: 24rpx;float:right;color: #909399;'>{{item.addTime}}</view>
+      </view>
       <view class="weui-media-box__desc">{{item.content}}</view>
     </view>
   </view>
 
-  <view wx:else class="weui-panel__bd">
-    <view class="weui-media-box weui-media-box_text">
+  <view wx:else style='border-bottom: none;'>
+    <view style='font-size: 26rpx;line-height: 100rpx;text-align: center;border-bottom: none;'>
       暂无数据
     </view>
   </view>

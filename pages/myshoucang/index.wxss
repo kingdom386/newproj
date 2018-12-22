@@ -1,0 +1,135 @@
+/* pages/myshoucang/index.wxss */
+@import '../../lib/icon.wxss';
+
+page {
+  background: #f1f1f1;
+}
+
+.tab_btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  background: #fff;
+  border-bottom: 2px solid #dcdfe6;
+}
+
+.tab_item {
+  position: relative;
+  flex-basis: 50%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 8;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid #cc935c;
+}
+
+.shoucang_box {
+  margin-top: 100rpx;
+}
+
+.shoucang_item {
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+
+.img {
+  width: 100%;
+  height: 400rpx;
+  background: #909399;
+}
+
+.shoucang_pane {
+  padding: 0 20rpx;
+  /* height: 70rpx; */
+  overflow: hidden;
+}
+
+.shoucang_left {
+  float: left;
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+
+.shoucang_right {
+  float: right;
+}
+
+.acrivity_info_title {
+  padding: 0 10rpx;
+  width: atuo;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #606266;
+  overflow: hidden;
+}
+
+.info_left {
+  float: left;
+}
+
+.info_right {
+  margin-top: 10rpx;
+  padding: 0 10rpx;
+  float: right;
+  width: 100rpx;
+  height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #cc935c;
+  border-radius: 10rpx;
+}
+
+.progress-box {
+  padding: 0 10rpx 10rpx;
+}
+
+.activity_state {
+  padding: 0 10rpx;
+  display: flex;
+  height: 60rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+}
+
+.activity_state em {
+  font-size: 26rpx;
+  font-style: 600;
+}
+
+.state_left {
+  flex-basis: 70%;
+}
+
+.state_right {
+  flex-basis: 30%;
+  text-align: right;
+}
+
+.star {
+  font-size: 40rpx;
+}
+
+.color_ora {
+  color: #e6a23c;
+}

@@ -11,7 +11,7 @@ Page({
     yyzz: [],
     xycx: [],
     rzf: [],
-    financeId:'',
+    financeId: '',
     company: '',
     money: '',
     province: '',
@@ -32,28 +32,51 @@ Page({
     userId: '',
     code: '1111',
     msg: '获取验证码',
-    one: true,
-    two: true,
-    three: true,
-    four: true,
-    five: true,
-    six: true,
+    a: false,
+    b: false,
+    c: false,
+    d: false,
+    f: false,
+    g: false,
+    h: false,
+    i: false,
     showidcardfront: true,
     showidcardback: true,
     showyyzz: true,
     showxycx: true,
-    showrzf: true
+    showrzf: true,
+    showcode: false,
+    ag: false,
+    sendcode: true
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: '产品申请',
     })
     this.data.financeId = options.id
   },
-  chooseImage: function (e) {
+  timers() {
+    var _this = this
+    clearInterval(_this.data.timer)
+    var t = 60
+    _this.data.timer = setInterval(function() {
+      if (t >= 1) {
+        t -= 1;
+        _this.setData({
+          msg: t + 's'
+        })
+      } else {
+        _this.setData({
+          msg: '获取验证码',
+          sendcode: true
+        })
+      }
+    }, 1000)
+  },
+  chooseImage: function(e) {
     var that = this;
     var tp = e.currentTarget.dataset.img
     var imgurl = ''
@@ -61,14 +84,14 @@ Page({
       count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
           url: 'https://boss.zjifa.com.cn/file/uploadFile',
           filePath: tempFilePaths[0],
           name: 'file',
           success(d) {
-            console.log(typeof (JSON.parse(d.data)))
+            console.log(typeof(JSON.parse(d.data)))
             var resp = JSON.parse(d.data)
             imgurl = resp.data
             if (resp.code === 0) {
@@ -104,7 +127,7 @@ Page({
                 that.setData({
                   rzf: that.data.rzf.concat(res.tempFilePaths),
                   showrzf: false,
-                  authorization: imgurl
+                  finance: imgurl
                 });
               }
             }
@@ -113,15 +136,14 @@ Page({
       }
     })
   },
-  bindRegionChange: function (e) {
-    console.log(e.detail.value)
+  bindRegionChange: function(e) {
     this.setData({
       region: e.detail.value,
       province: e.detail.value[0],
       city: e.detail.value[1],
     })
   },
-  cmp: function (e) {
+  cmp: function(e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -129,20 +151,15 @@ Page({
         company: val
       })
       _this.setData({
-        one: false
+        a: true
       })
     } else {
-      wx.showModal({
-        title: '表单提示',
-        content: '融资主体填写有误！',
-        showCancel: false
-      })
       _this.setData({
-        one: true
+        a: false
       })
     }
   },
-  mny: function (e) {
+  mny: function(e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -150,64 +167,59 @@ Page({
         money: val
       })
       _this.setData({
-        two: false
+        b: true
       })
     } else {
-      wx.showModal({
-        title: '表单提示',
-        content: '融资金额填写有误！',
-        showCancel: false
-      })
       _this.setData({
-        two: false
+        b: false
       })
     }
   },
-  tme: function (e) {
+  tme: function(e) {
     var _this = this
     var reg = /^\d+$/
     var val = e.detail.value
     if (reg.test(val)) {
       this.setData({
-        time: val
+        time: val,
+        c: true
       })
     } else {
-      wx.showModal({
-        title: '表单提示',
-        content: '融资期限填写有误！',
-        showCancel: false
+      _this.setData({
+        time: '',
+        c: false
       })
     }
   },
-  pur: function (e) {
+  pur: function(e) {
     var _this = this
     var val = e.detail.value
     if (val) {
       this.setData({
-        purpose: val
+        purpose: val,
+        d: true
       })
     } else {
-      wx.showModal({
-        title: '表单提示',
-        content: '资金用途填写有误！',
-        showCancel: false
+      this.setData({
+        purpose: '',
+        d: false
       })
     }
   },
-  nme: function (e) {
-    var reg = /^[a-zA-Z0-9_-]{4,16}$/
-    var username = /^[\u4e00-\u9fff\w]{2,16}$/
+  nme: function(e) {
+    // var reg = /^[a-zA-Z0-9_-]{4,16}$/
+    // var username = /^[\u4e00-\u9fff\w]{2,16}$/
     var _this = this
     var val = e.detail.value
-    if (reg.test(val) || username.test(val)) {
+    if (val) {
       this.setData({
-        username: val
+        username: val,
+        e: true
       })
     } else {
-      wx.showModal({
-        title: '表单提示',
-        content: '联系人姓名填写有误！',
-        showCancel: false
+      this.setData({
+        username: '',
+        e: false
       })
     }
   },
@@ -217,116 +229,276 @@ Page({
     var val = e.detail.value
     if (reg.test(val)) {
       this.setData({
-        phone: val
+        phone: val,
+        f: true
       })
     } else {
-      wx.showModal({
-        title: '表单提示',
-        content: '手机号码填写有误！',
-        showCancel: false
+      this.setData({
+        phone: val,
+        f: false
       })
     }
   },
-  // checkcode: function (e) {
-  //   var val = e.detail.value
-  //   var reg = /^\d{4}$/
-  //   if (reg.test(val)) {
-  //     this.setData({
-  //       code: val
-  //     })
-  //   } else {
-  //     this.setData({
-  //       code: ''
-  //     })
-  //   }
-  // },
-  formSubmit: function (e) {
+  checkcode: function(e) {
+    var val = e.detail.value
+    var reg = /^\d{6}$/
+    if (reg.test(val)) {
+      this.setData({
+        code: val,
+        g: true,
+      })
+    } else {
+      this.setData({
+        code: '',
+        g: false
+      })
+    }
+  },
+  radiochange: function(e) {
+    console.log(e.detail.value)
+    if (e.detail.value.length > 0) {
+      this.setData({
+        ag: true
+      })
+    } else {
+      this.setData({
+        ag: false
+      })
+    }
+  },
+  goxieyi: function() {
+    wx.navigateTo({
+      url: '../mianze/index',
+    })
+  },
+  sendcode(e) {
     var _this = this
-    if (!_this.data.company|| this.data.one) {
-      wx.showModal({
-        title: '表单提示',
-        content: '请输入融资主体信息！',
-        showCancel: false
+    var reg = /^1(3|4|5|7|8)\d{9}$/
+    var phone = _this.data.phone
+    if (reg.test(_this.data.phone)) {
+      if (_this.data.sendcode) {
+        _this.setData({
+          sendcode: false
+        })
+        wx.showLoading({
+          title: '短信发送中...',
+        })
+        wx.request({
+          url: 'https://boss.zjifa.com.cn/sendCode',
+          data: {
+            phone: phone,
+            type: 4
+          },
+          method: 'post',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          success(p) {
+            if (p.data.code === 0) {
+              wx.hideLoading();
+              _this.timers()
+            }
+          }
+        })
+      } else {
+        wx.showModal({
+          content: '请稍后再试！',
+        })
+      }
+    } else {
+      wx.showToast({
+        title: '请检查手机号码!',
+        image: '../../images/prompt_fill.png'
+      })
+    }
+  },
+  formSubmit: function(e) {
+    var _this = this
+    if (!_this.data.a) {
+      wx.showToast({
+        title: '请输入融资主体信息!',
+        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    if (!_this.data.money ||this.data.two) {
-      wx.showModal({
-        title: '表单提示',
-        content: '请输入融资金额息！',
-        showCancel: false
+    if (!_this.data.b) {
+      wx.showToast({
+        title: '请输入融资金额!',
+        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    console.log(_this.data.region.length <= 0)
-    if (_this.data.region.length <= 0) {
-      wx.showModal({
-        title: '表单提示',
-        content: '请选择地区！',
-        showCancel: false
+    console.log(_this.data.region)
+    if (_this.data.region.length <= 1) {
+      wx.showToast({
+        title: '请选择地区!',
+        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    if (!_this.data.code || _this.showyzmerror) {
-      wx.showModal({
-        title: '表单提示',
-        content: '验证码信息有误！',
-        showCancel: false
+
+    if (!_this.data.c) {
+      wx.showToast({
+        title: '请输入融资期限!',
+        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    if (_this.data.showidcardfront) {
-      wx.showModal({
-        title: '表单提示',
-        content: '请上传身份证正面！',
-        showCancel: false
+    if (!_this.data.d) {
+      wx.showToast({
+        title: '请输入资金用途!',
+        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    if (_this.data.showidcardback) {
-      wx.showModal({
-        title: '表单提示',
-        content: '请上传身份证反面！',
-        showCancel: false
+    if (!_this.data.e) {
+      wx.showToast({
+        title: '请输入联系人!',
+        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    if (_this.data.showyyzz) {
-      wx.showModal({
-        title: '表单提示',
-        content: '请上传营业执照！',
-        showCancel: false
+    if (!_this.data.f) {
+      wx.showToast({
+        title: '请输入手机号码!',
+        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    wx.request({
-      url: 'https://boss.zjifa.com.cn/finance/apply',
-      data: _this.data,
-      method: 'post',
-      header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      success(p) {
-        console.log(p.data.code)
-        if (p.data.code == 0) {
-          wx.showModal({
-            title: '申请提示',
-            content: p.data.msg,
-            success(res) {
-              if (res.confirm) {
-                wx.navigateTo({
-                  url: '../jinrong/index',
+    if (!_this.data.g) {
+      wx.showToast({
+        title: '验证码格式错误!',
+        image: '../../images/prompt_fill.png'
+      })
+      return false;
+    }
+    // if (_this.data.showidcardfront) {
+    //   wx.showToast({
+    //     title: '请上传身份证正面!',
+    //     image: '../../images/prompt_fill.png'
+    //   })
+    //   return false;
+    // }
+    // if (_this.data.showidcardback) {
+    //   wx.showToast({
+    //     title: '请上传身份证反面!',
+    //     image: '../../images/prompt_fill.png'
+    //   })
+    //   return false;
+    // }
+    // if (_this.data.showyyzz) {
+    //   wx.showToast({
+    //     title: '请上传营业执照!',
+    //     image: '../../images/prompt_fill.png'
+    //   })
+    //   return false;
+    // }
+
+    // if (_this.data.showyyzz) {
+    //   wx.showToast({
+    //     title: '请上传营业执照!',
+    //     image: '../../images/prompt_fill.png'
+    //   })
+    //   return false;
+    // }
+
+    // if (_this.data.showxycx) {
+    //   wx.showToast({
+    //     title: '请上传信用授权书!',
+    //     image: '../../images/prompt_fill.png'
+    //   })
+    //   return false;
+    // }
+
+    // if (_this.data.showrzf) {
+    //   wx.showToast({
+    //     title: '请上传企业财务信息!',
+    //     image: '../../images/prompt_fill.png'
+    //   })
+    //   return false;
+    // }
+
+    if (!_this.data.ag) {
+      wx.showToast({
+        title: '请同意免责协议!',
+        image: '../../images/prompt_fill.png'
+      })
+      return false;
+    }
+
+    wx.login({
+      success: function(res) {
+        if (res.code) {
+          wx.request({
+            url: 'https://boss.zjifa.com.cn/member/login',
+            data: {
+              code: res.code
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'post',
+            success(p) {
+              // console.log(p)
+              if (p.data.code === 0) {
+                wx.showLoading({
+                  title: '正在申请中...',
+                })
+                wx.request({
+                  url: 'https://boss.zjifa.com.cn/finance/apply',
+                  data: {
+                    financeId: _this.data.financeId,
+                    company: _this.data.company,
+                    money: _this.data.money,
+                    province: _this.data.region[0],
+                    city: _this.data.region[1],
+                    time: _this.data.time,
+                    purpose: _this.data.purpose,
+                    username: _this.data.username,
+                    phone: _this.data.phone,
+                    idcardFront: _this.data.idcardFront,
+                    idcardBack: _this.data.idcardBack,
+                    businessLicense: _this.data.businessLicense,
+                    authorization: _this.data.authorization,
+                    finance: _this.data.finance,
+                    userId: p.data.data.id,
+                    code: _this.data.code,
+                    id: _this.data.financeId
+                  },
+                  method: 'post',
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  success (r) {
+                    console.log(r)
+                    if (r.data.code === 0) {
+                      wx.hideLoading()
+                      wx.showModal({
+                        content: r.data.msg,
+                        showCancel: false,
+                        success (res) {
+                          if (res.confirm) {
+                            wx.navigateTo({
+                              url: '../main/index',
+                            })
+                          }
+                        }
+                      })
+                    } else {
+                      wx.hideLoading()
+                      wx.showToast({
+                        title: r.data.msg,
+                      })
+                    }
+                  }
                 })
               }
             }
           })
-        } else {
-          wx.showModal({
-            title: '申请提示',
-            content: p.data.msg,
-          })
         }
       },
-      fail(f) {
-      }
+      fail: function(res) {},
+      complete: function(res) {},
     })
   }
 })

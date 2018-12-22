@@ -1,0 +1,5 @@
+<!--pages/msgde/inde.wxml-->
+<view class='msgde_box'>
+  <view class='msgde_title'>{{name}}</view>
+  <view class='msgde_content'>{{content}}</view>
+</view>

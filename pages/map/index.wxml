@@ -1,0 +1,18 @@
+<view class='maps'>
+  <map  id='map'
+    subkey="{{subKey}}"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    scale="{{18}}"
+    markers="{{markers}}"
+    covers="{{covers}}"
+    enable-3D="{{enable3d}}"
+    show-compass="{{showCompass}}"
+    enable-zoom="{{enableZoom}}"
+    enable-rotate="{{enableRotate}}"
+    enable-overlooking="{{enableOverlooking}}"
+    enable-scroll="{{enableScroll}}"
+    polygons="{{drawPolygon ? polygons : []}}"
+  >
+  </map>
+</view>

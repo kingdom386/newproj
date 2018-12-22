@@ -1,2 +1,3 @@
-<!--pages/jinrongliucheng/index.wxml-->
-<text>pages/jinrongliucheng/index.wxml</text>
+<view class='box'>
+  <image style='width: 577rpx;height: 878rpx;' src='../../images/liuchengtu.png'></image>
+</view>

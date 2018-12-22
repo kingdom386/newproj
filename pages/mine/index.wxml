@@ -1,42 +1,75 @@
 <view class='my_box'>
+  <import src="../../template/index.wxml" />
+  <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+
   <view class='my_info_panee'>
     <view class='my_img_left'>
       <view class='my_img'>
-        <image mode='scaleToFill' src='{{avatar}}'></image>
+        <image wx:if="{{userInfo.avatarUrl}}" mode='aspectFit' src='{{userInfo.avatarUrl}}'></image>
+        <image wx:else mode='aspectFit' src='../../images/c1.jpg'></image>
       </view>
     </view>
     <!-- my_img_left -->
-    <view class='my_img_right'>
-      <text class="my_jr_title">{{username}}</text>
-      <text class="my_jr_sub">用户等级：Lv{{level}}</text>
+    <view class='my_img_right' style='text-align: left;'>
+      <!-- <view class='edit'>修改
+        <i class='iconfont icon-enter'></i>
+      </view> -->
+      <text wx:if='{{username}}' class="my_jr_title">{{username}}</text>
+      <text wx:else class="my_jr_title">{{userInfo.nickName}}</text>
+      <text wx:if="{{level === 0 && phone}}" class="my_jr_sub">用户等级：预备会员</text>
+      <text wx:elif="{{level === 1 && phone }}" class="my_jr_sub">用户等级：初级会员</text>
+      <text wx:elif="{{level === 2 && phone }}" class="my_jr_sub">用户等级：中级会员</text>
+      <text wx:elif="{{level === 3 && phone }}" class="my_jr_sub">用户等级：高级会员</text>
+      <text wx:elif="{{level === 4 && phone }}" class="my_jr_sub">用户等级：特级会员</text>
+      <text wx:else class="my_jr_sub">用户等级：</text>
+      <text class="my_jr_sub">到期时间：{{unable_date}}</text>
     </view>
     <!-- my_img_right -->
   </view>
-  <!-- my_info_panee -->
-  <view class="weui-panel">
-    <view class="weui-panel__bd">
-      <view class="weui-media-box weui-media-box_small-appmsg">
-        <view class="weui-cells weui-cells_in-small-appmsg">
-          <navigator url="../vipcenter/index?id={{userid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd">
-              <image src="../../images/center.png" style="width: 20px;height: 20px;margin-right: 5px" />
-            </view>
-            <view class="weui-cell__bd weui-cell_primary">
-              <view>会员中心</view>
-            </view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-          <navigator url="../msg/msg?id={{userid}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd">
-              <image src="../../images/msg.png" style="width: 20px;height: 20px;margin-right: 5px" />
-            </view>
-            <view class="weui-cell__bd weui-cell_primary">
-              <view>我的消息</view>
-            </view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-          </navigator>
-        </view>
+  <view class='user_box'>
+    <view class='user_list'>
+      <image class='user_icon' src='../../images/vip.png'></image>
+      <view class='user_info'>点亮会员标识</view>
+      <view class='user_label'>可享受多项特权</view>
+      <view bindtap='govipcenter' class='open_btn'>会员升级</view>
+      <!-- <view class='user_shuoming'>
+        <view>点亮会员标识</view>
+        <view class='sub'>可享受更多项特权</view>
       </view>
+      <view class='user_open'>
+        
+      </view> -->
+    </view>
+  </view>
+  <!-- my_info_panee -->
+  <view class='user_pane'>
+    <view class='user_cell' bindtap='gomsg' data-id="{{userid}}">
+      <view class='user_cell_left color_zs iconfont icon-lingdang-xianxing'></view>
+      <view class='user_cell_mid'>我的消息</view>
+      <view class='user_cell_right iconfont icon-enter'></view>
+    </view>
+
+    <view class='user_cell' bindtap='gomyactivity' data-id="{{userid}}">
+      <view class='user_cell_left color_zs iconfont icon-lanqiu'></view>
+      <view class='user_cell_mid'>我的活动</view>
+      <view class='user_cell_right iconfont icon-enter'></view>
+    </view>
+
+    <view class='user_cell' bindtap='gomyapply' data-id="{{userid}}">
+      <view class='user_cell_left color_zs iconfont icon-shenqing'></view>
+      <view class='user_cell_mid'>我的申请</view>
+      <view class='user_cell_right iconfont icon-enter'></view>
+    </view>
+
+    <view class='user_cell' bindtap='goshoucang' data-id="{{userid}}">
+      <view class='user_cell_left color_zs iconfont icon-collection'></view>
+      <view class='user_cell_mid'>我的收藏</view>
+      <view class='user_cell_right iconfont icon-enter'></view>
+    </view>
+    <view class='user_cell' bindtap='gocontactus' data-id="{{userid}}">
+      <view class='user_cell_left color_zs iconfont icon-phone'></view>
+      <view class='user_cell_mid'>联系我们</view>
+      <view class='user_cell_right iconfont icon-enter'></view>
     </view>
   </view>
 </view>

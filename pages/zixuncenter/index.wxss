@@ -1,0 +1,36 @@
+/* pages/zixuncenter/index.wxss */
+@import '../../lib/icon.wxss';
+@import "../../wxParse/wxParse.wxss";
+
+.zixun_box {
+  padding: 20rpx;
+}
+
+.zi_title {
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 80rpx;
+}
+
+.date {
+  font-size: 26rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  color: #606266;
+  border-bottom: 1px solid #dcdfe6;
+  overflow: hidden;
+}
+
+.collstar {
+  float: right;
+  font-size: 40rpx;
+  line-height: 60rpx;
+  color: #cc935c;
+}
+
+.img {
+  margin: 20rpx 0;
+  text-align: center;
+  background: #909399;
+}

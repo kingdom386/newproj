@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import './weui.wxss';
+@import "/template/index.wxss";
 
 page, view {
   padding: 0;
@@ -15,4 +16,4 @@ page, view {
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}

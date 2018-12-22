@@ -1,0 +1,159 @@
+/* pages/myactivity/index.wxss */
+page{
+  background: #f1f1f1;
+}
+
+.tab_btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  background: #fff;
+  border-bottom: 2px solid #dcdfe6;
+}
+
+.tab_item {
+  position: relative;
+  flex-basis: 50%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 8;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid #cc935c;
+}
+
+.list_box {
+  margin-top: 100rpx;
+  padding: 0 20rpx;
+}
+
+.activity_list {
+  overflow: hidden;
+  background: #fff;
+}
+
+.activity_title {
+  position: relative;
+  padding-left: 20rpx;
+  width: auto;
+  height: 80rpx;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  color: #e6a23c;
+  border-bottom: 1px solid #dcdfe6;
+}
+
+.activity_log {
+  position: absolute;
+  z-index: 5;
+  top: 20rpx;
+  left: 20rpx;
+  display: blcok;
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  border: 10rpx solid #fff;
+}
+
+.activity_xc {
+  width: 100%;
+  background: #909399;
+}
+
+.activity_info_pane {
+  overflow: hidden;
+}
+
+.acrivity_info_title {
+  padding: 0 10rpx;
+  width: atuo;
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #606266;
+  overflow: hidden;
+}
+
+.info_left {
+  float: left;
+}
+
+.info_right {
+  padding: 0 10rpx;
+  float: right;
+  width: auto;
+  height: 40rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background: #cc935c;
+  border-radius: 10rpx;
+}
+
+.progress-box {
+  padding: 10rpx;
+}
+
+.activity_state {
+  padding: 0 10rpx;
+  display: flex;
+  height: 60rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+}
+
+.activity_state em {
+  font-size: 26rpx;
+  font-style: 600;
+}
+
+.state_left {
+  flex-basis: 70%;
+}
+
+.state_right {
+  flex-basis: 30%;
+  text-align: right;
+}
+
+.nodata{
+  background: #fff;
+  text-align: center;
+  height: 200rpx;
+  font-size: 30rpx;
+  line-height: 200rpx;
+  color: #606266;
+}
+
+.color_red {
+  color: #f56c6c;
+}
+
+.color_ora {
+  color: #e6a23c;
+}
+
+.margin_lt20 {
+  margin-left: 20rpx;
+}
+
+.margin_btm20 {
+  margin-bottom: 20rpx;
+}

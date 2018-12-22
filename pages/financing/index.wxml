@@ -1,0 +1,63 @@
+<view class="financing_box">
+  <view bindtap='goliucheng' class='fixed_box iconfont icon-liucheng'></view>
+
+  <view data-name='尽职调查' data-id='{{jzid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/9802d8777a839d6b.jpg'></image>
+  </view>
+
+  <view data-name='企业管理' data-id='{{qyid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/26b1ae2a9cb4d221.jpg'></image>
+  </view>
+
+  <view data-name='法务联系' data-id='{{flid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/d62d01cf0261ed57.jpg'></image>
+  </view>
+
+  <view data-name='税务筹划' data-id='{{swid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/7f9bef304812061e.jpg'></image>
+  </view>
+
+  <view data-name='人力资源' data-id='{{rlid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/df6f71ecedff79e5.jpg'></image>
+  </view>
+
+  <view data-name='研究报告' data-id='{{yjid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/995e93a0d760f901.jpg'></image>
+  </view>
+
+  <view data-name='全案委托' data-id='{{qaid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/1bd0349be5852b04.jpg'></image>
+  </view>
+
+
+  <view data-name='定制服务' data-id='{{dzid}}' bindtap='coding' class='moduleBox mb10'>
+    <image style='width: 100%; width:690rpx;height: 230rpx;' src='http://i1.bvimg.com/671793/480730b7c891ed0c.jpg'></image>
+  </view>
+
+
+
+  <!-- <view bindtap='coding' class='moduleBox mb10 bg_blue'>
+    <text>尽职调查</text>
+  </view> -->
+  <!-- <view bindtap='coding' class='moduleBox mb10 bg_green'>
+    <text>企业管理</text>
+  </view> -->
+  <!-- <view bindtap='coding' class='moduleBox mb10 bg_ora'>
+    <text>法律咨询</text>
+  </view> -->
+  <!-- <view bindtap='coding' class='moduleBox mb10 bg_blue'>
+    <text>税务筹划</text>
+  </view>
+  <view bindtap='coding' class='moduleBox mb10 bg_blue'>
+    <text>人力资源</text>
+  </view> -->
+  <!-- <view bindtap='coding' class='moduleBox mb10 bg_blue'>
+    <text>研究报告</text>
+  </view> -->
+  <!-- <view bindtap='coding' class='moduleBox mb10 bg_blue'>
+    <text>全案委托</text>
+  </view>
+  <view bindtap='coding' class='moduleBox mb10 bg_blue'>
+    <text>定制服务</text>
+  </view> -->
+</view>

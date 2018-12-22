@@ -1,17 +1,97 @@
 <view class="activity_de">
   <view class='activity_img'>
-    <image class='banner_img' src='../../images/b2.jpg'></image>
+    <image class='banner_img' mode='aspectFill' src='{{listData.img}}'></image>
     <!--  -->
     <view class='de_title'>
-      <view class='de_left'>
-        <image class='banner_logo' src='../../images/c2.jpg'></image>
-      </view>
       <view class="de_content">
-        <view class='title'>紫蓬山景区来自我们的李连杰</view>
-        <view class='de_other margin-btm20'>紫蓬山景区</view>
-        <view class='de_other'>紫蓬山景区</view>
+        <view class='title'>{{listData.title}}</view>
+        <view class='de_other margin-btm20'>{{listData.name}}</view>
+        <view class='de_other'>{{listData.type}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- activity_img -->
+  <view class='de_main'>
+    <view class='de_main_title'>
+      <view class='de_main_icon color_blue iconfont icon-jiaotong'></view>
+      <view class='de_main_txt'>活动时间：</view>
+    </view>
+    <view class='de_main_route'>
+      <view class='de_main_item'>开始：{{listData.startTime}}</view>
+      <view class='de_main_arrow iconfont icon-eg'></view>
+      <view class='de_main_item'>结束：{{listData.endTime}}</view>
+    </view>
+    <view class="progress-box">
+      <progress percent="{{listData.num / listData.personNum * 100}}" active stroke-width="3" />
+    </view>
+    <view class="de_main_other">
+      <view class='other_left'>限定人数：
+        <em class="color_ora">{{listData.personNum}}</em>
+      </view>
+      <view class='other_right'>活动费用：
+        <em class="color_ora">￥{{listData.fee}}元</em>
+      </view>
+    </view>
+  </view>
+  <!-- de_main -->
+  <view class='wanna_go'>
+    <view class='wanna_title'>已有
+      <em>{{listData.num}}</em>人报名
+      <view class='color_blue' style='float:right;'>展开所有
+        <i class="iconfont icon-unfold"></i>
+      </view>
+    </view>
+    <view wx:if='{{listData.num > 0}}' class='wanna_de'>
+      <view wx:for='{{listData.lists}}' class='wanna_item'>
+        <image class='wanna_img' src='http://i2.bvimg.com/671793/d92c7cb5b6a912eb.jpg'></image>
+      </view>
+    </view>
+
+    <view wx:else class='wanna_de'>
+      <view class='wanna_item'>
+        暂无报名
       </view>
     </view>
   </view>
 
+  <view class='wanna_go'>
+    <view class='wanna_title'>{{listData.title}}
+    </view>
+    <view class='content_map'>
+      <view class='maps' data-name='{{listData.name}}' data-lng='{{listData.lng}}' data-lat='{{listData.lat}}' bindtap='gomap'>
+        <view class='maps_left'>
+          <i class="iconfont icon-dingwei color_blue"></i>
+          {{listData.address}}
+        </view>
+        <view class='maps_right'>
+          查看地图
+          <i class="iconfont icon-enter"></i>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='wanna_go'>
+    <view class='wanna_title'>活动详情
+    </view>
+    <view class='wanna_txt'>
+      <import src="../../wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+  <view class='de_footer'>
+    <view bindtap='gocollection' data-id="{{listData.id}}" class='de_footer_one'>
+      <view wx:if="{{collection&&listData.isCollect === '0'}}" class='footer_icon iconfont icon-collection'></view>
+      <view wx:else class='footer_icon iconfont icon-collection_fill color_ora'></view>
+      <view class='footer_icon_txt '>收藏</view>
+    </view>
+    <view class='de_footer_one'>
+      <view class='footer_icon iconfont icon-customerservice'></view>
+      <view class='footer_icon_txt'>客服</view>
+      <button open-type='contact' style='position: absolute;top: 0;left: 0;width: 100%;height: 100%;opacity: 0;'></button>
+    </view>
+    <view wx:if='{{listData.status !== "2" && listData.num <= listData.personNum &&listData.isSignUp === "0" }}' bindtap='gopay' data-id="{{listData.id}}" class='de_footer_two' data-pay="{{listData.fee}}">我要报名</view>
+    <view wx:elif='{{listData.status !== "2" && listData.num <= listData.personNum &&listData.isSignUp === "1"}}' data-id="{{listData.id}}" style='background: #909399;' class='de_footer_two' data-pay="{{listData.fee}}">已报名</view>
+    <view wx:else data-id="{{listData.id}}" style='background: #909399;' class='de_footer_two' data-pay="{{listData.fee}}">已结束</view>
+  </view>
 </view>

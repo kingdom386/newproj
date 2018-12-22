@@ -1,4 +1,5 @@
 /* pages/jinrong/index.wxss */
+@import '../../lib/icon.wxss';
 
 page {
   min-height: 100%;
@@ -83,4 +84,14 @@ page {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: break-all;
+}
+
+.fixed_box{
+  position: fixed;
+  z-index: 90;
+  right: 20rpx;
+  top: 60%;
+  font-size: 100rpx;
+  line-height: 100rpx;
+  color: #bc824c;
 }

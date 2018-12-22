@@ -1,66 +1,64 @@
-<view class="apply_box">
-  <view class='apply_form'>
-    <form>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">服务类型</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="服务类型" />
-          </view>
-        </view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*服务类型：</view>
       </view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">服务需求</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="服务需求" />
-          </view>
-        </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" disabled='true' value='{{typename}}' placeholder="请输入联系人" />
       </view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">联系人</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="联系人" />
-          </view>
-        </view>
+      <view wx:if="{{!showusererror}}" class="weui-cell__ft">
       </view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">手机号码</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="手机号码" />
-          </view>
-        </view>
-      </view>
+    </view>
 
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">验证码</view>
-          </view>
-          <view class="weui-cell__bd weui-code" style='padding-right: 200rpx;'>
-            <input class="weui-input" placeholder="验证码" />
-          </view>
-          <view class='send_code' hover-class="active">
-            发送验证码
-          </view>
-        </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*服务需求：</view>
       </view>
+      <view class="weui-cell__bd">
+        <textarea bindblur='checkxuqiu' style='height: 120rpx;font-size: 24rpx;' placeholder='服务需求' name="textarea" />
+      </view>
+      <view wx:if="{{!showmobilerror}}" class="weui-cell__ft">
+      </view>
+    </view>
 
-      <view class="button-sp-area">
-        <button style='background:#1296db;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">提交</button>
-        <button class="weui-btn mini-btn" formType="reset" size="mini">重置</button>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*联系人：</view>
       </view>
-      
-    </form>
+      <view class="weui-cell__bd">
+        <input bindblur='checkusername' class="weui-input" placeholder="请输入联系人" />
+      </view>
+      <view wx:if="{{!showusererror}}" class="weui-cell__ft">
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*手机号码：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input bindblur='checkmobile' class="weui-input" placeholder="请输入手机号码" />
+      </view>
+      <view wx:if="{{!showusererror}}" class="weui-cell__ft">
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*验证码：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindblur='checkcode' name="code" placeholder="请输入验证码" />
+      </view>
+      <view class="weui-cell__ft">
+        <view bindtap='sendcode' style='width: 180rpx; text-align: center;' class="weui-vcode-btn">{{msg}}</view>
+      </view>
+    </view>
+
   </view>
-</view>
+  <view class="button-sp-area">
+    <button style='background:#cd935c;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">提交</button>
+    <button class="weui-btn mini-btn" formType="reset" type="warn" size="mini">重置</button>
+  </view>
+</form>

@@ -1,45 +1,19 @@
 <view class='search_box'>
   <view class="section">
     <i class='search_icon iconfont icon-search'></i>
-    <input class='search_input' confirm-type='search' placeholder='搜索企业' type="text" />
+    <input class='search_input' bindconfirm="search" placeholder='搜索企业' type="text" />
   </view>
   <view class='list_box'>
-    <view class='list_item margin-btm20'>
+    <view bindtap='godetial' data-id="{{item.id}}" wx:for="{{cpList}}" wx:for_index="idx" wx:for-item="item" class='list_item margin-btm20'>
       <view class='list_left'>
-        <image class='list_img' src='../../images/c1.jpg' mode='aspectFit'></image>
+        <image class='list_img' src='{{item.img}}' mode='aspectFit'></image>
       </view>
       <view class='list_right'>
-        <view class='list_tile'>林俊杰
-          <i class="iconfont icon-icon-test color_blue"></i>
+        <view class='list_tile'>{{item.name}}
+          <!-- <i class="iconfont icon-icon-test color_blue"></i> -->
         </view>
-        <view class='list_info margin-btm20'>林俊杰（JJ Lin），1981年3月27日出生于新加坡，华语流行乐男歌手、词曲创作者、音乐制作人。</view>
-        <view class='list_info'>华语流行乐男歌手、词曲创作者、音乐制作人。</view>
-      </view>
-    </view>
-    <!-- list_item -->
-    <view class='list_item margin-btm20'>
-      <view class='list_left'>
-        <image class='list_img' src='../../images/c2.jpg' mode='aspectFit'></image>
-      </view>
-      <view class='list_right'>
-        <view class='list_tile'>迪丽热巴
-          <i class="iconfont icon-Group- color_purple"></i>
-        </view>
-        <view class='list_info margin-btm20'>迪丽热巴（Dilraba），1992年6月3日出生于新疆乌鲁木齐市，中国内地影视女演员。</view>
-        <view class='list_info'>中国内地影视女演员。</view>
-      </view>
-    </view>
-    <!-- list_item -->
-    <view class='list_item margin-btm20'>
-      <view class='list_left'>
-        <image class='list_img' src='../../images/c3.jpg' mode='aspectFit'></image>
-      </view>
-      <view class='list_right'>
-        <view class='list_tile'>林俊杰
-          <i class="iconfont icon-Group- color_purple"></i>
-        </view>
-        <view class='list_info margin-btm20'>林俊杰（JJ Lin），1981年3月27日出生于新加坡，华语流行乐男歌手、词曲创作者、音乐制作人。</view>
-        <view class='list_info'>华语流行乐男歌手、词曲创作者、音乐制作人。</view>
+        <view class='list_info margin-btm20'>{{item.detail}}</view>
+        <view class='list_info'>{{item.label}}</view>
       </view>
     </view>
     <!-- list_item -->

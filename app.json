@@ -13,55 +13,33 @@
     "pages/coding/index",
     "pages/index/index",
     "pages/agreement/index",
-    "pages/consultation/index",
     "pages/jianjie/index",
     "pages/search/index",
     "pages/pay/index",
-    "pages/financing /index",
+    "pages/financing/index",
     "pages/financingapplye/index",
     "pages/process/index",
-    "pages/jinrongliucheng/indnex",
     "pages/jinrongliucheng/index",
     "pages/exemption /index",
     "pages/activity/index",
-    "pages/activity_de/index"
+    "pages/activity_de/index",
+    "pages/myactivity/index",
+    "pages/myapply/index",
+    "pages/myshoucang/index",
+    "pages/contact/index",
+    "pages/comdetail/index",
+    "pages/map/index",
+    "pages/zixuncenter/index",
+    "pages/register/index",
+    "pages/xieyi/index",
+    "pages/mianze/index",
+    "pages/kefu/index",
+    "pages/msgde/inde"
   ],
   "window": {
     "navigationBarTitleText": "浙江省投融资协会",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#2d8cf0",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/main/index",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_s.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/activity/index",
-        "iconPath": "images/hd.png",
-        "selectedIconPath": "images/hd_s.png",
-        "text": "活动"
-      },
-      {
-        "pagePath": "pages/coding/index",
-        "iconPath": "images/kf.png",
-        "selectedIconPath": "images/kf_s.png",
-        "text": "客服"
-      },
-      {
-        "pagePath": "pages/mine/index",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my_s.png",
-        "text": "我的"
-      }
-    ]
   }
 }

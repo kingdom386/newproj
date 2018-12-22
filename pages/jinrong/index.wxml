@@ -1,5 +1,5 @@
 <view>
-  <view class="weui-article__section">
+  <!-- <view class="weui-article__section">
     <view class="weui-article__h3">股权融资</view>
     <view class="weui-article__p">
       <text>1.初创期（天使轮、Pre-A轮、A轮）：天使投资、政府引 导基金、VC基金</text>
@@ -16,13 +16,21 @@
       <text>4.商业信用：应收账款收益权融资、商业票据融资</text>
       <text>5.租赁：金融租赁、融资租赁</text>
     </view>
-  </view>
+  </view> -->
+
+  <view bindtap='goliucheng' class='fixed_box iconfont icon-liucheng'></view>
+
+  <swiper style='height: 340rpx;' autoplay='true' circular='true' duration='500'>
+    <swiper-item wx:for="{{imgData}}" wx:for-index='idx' wx:for-item='item'>
+      <image style='width: 100%' src='{{item.img}}'></image>
+    </swiper-item>
+  </swiper>
 
   <view class='wx_pro_list'>
     产品介绍
   </view>
   <view class='view_box'>
-    <view wx:for="{{listData}}" class='view_item' data-id="{{item.id}}" bindtap='godetail' >
+    <view wx:for="{{listData}}" class='view_item' data-id="{{item.id}}" bindtap='godetail'>
       <view class='view_img'>
         <image mode="aspectFit" src='{{item.img}}'></image>
       </view>

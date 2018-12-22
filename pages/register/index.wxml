@@ -1,0 +1,38 @@
+<view class='register_box'>
+  <image mode='widthFix' style='width: 100%;' src='../../images/register.jpg'></image>
+  <view class='info_box'>
+    <view class='user_avatar'>
+      <image style='width: 100%;height: 100%;' src='{{useravatar}}' mode='widthFix'></image>
+    </view>
+    <view class='form_box'>
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class='form_item'>
+          <input bindblur='checkmobile' placeholder='请输入手机号码' placeholder-style='color: #fff;font-size: 30rpx;' style='color: #fff;' />
+          <view class='my_icon iconfont icon-mobilephone'></view>
+        </view>
+
+        <view class='form_item' style='padding-right: 160rpx;margin-bottom: 0;'>
+          <input bindblur='checkcode' placeholder='请输入验证码' style='color: #fff;' placeholder-style='color: #fff;font-size: 30rpx;' />
+          <view style='font-size: 40rpx;' class='my_icon iconfont icon-yanzhengma'></view>
+          <button bindtap='sendcode' hover-class='active_btn' class='send_btn'>{{msg}}</button>
+        </view>
+
+        <view class='form_check'>
+          <checkbox-group bindchange='radiochange'>
+            <checkbox value="cb" />
+            <em bindtap='goxieyi' class="agree">已阅读并同意协会入会须知</em>
+          </checkbox-group>
+        </view>
+
+        <view style='font-size: 24rpx;line-height: 50rpx;color:#2095f2;'>
+          <em style='margin-right: 10rpx;float:left;font-size: 40rpx;line-height: 66rpx;'>*</em> 绑定手机号码即成为协会预备会员</view>
+
+        <view class='btn_pane'>
+          <button form-type='submit' hover-class='active_btn' class='btns' size='mini'>确认</button>
+          <button bindtap='skip' hover-class='active_btn' class='btnss' size='mini'>跳过</button>
+        </view>
+
+      </form>
+    </view>
+  </view>
+</view>

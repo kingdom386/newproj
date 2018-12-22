@@ -1,66 +1,35 @@
 <view class='activity_box'>
-  <view class='activity_list margin_btm20'>
-    <view class='activity_title'>
-      上海明珠港
-      <image class='activity_log' src='../../images/c1.jpg'></image>
-    </view>
-    <image class='activity_xc' mode='aspectFit' src='../../images/b2.jpg'></image>
-    <view class='activity_info_pane'>
-      <view class='acrivity_info_title'>
-        <view class='info_left'>2018-10-26</view>
-        <view class='info_right'>融资路演</view>
-      </view>
-      <view class="progress-box">
-        <progress percent="60" active stroke-width="3" />
-      </view>
-      <view class='activity_state'>
-        <view class='state_left'>报名人数：<em class="color_ora">5</em>人 <em class="margin_lt20">状态：报名中</em></view>
-        <view class='state_right'>活动费用： <em class="color_ora">免费</em></view>
-      </view>
-    </view>
-  </view>
-  <!-- activity_list -->
-  <view class='activity_list margin_btm20'>
-    <view class='activity_title'>
-      上海明珠港
-      <image class='activity_log' src='../../images/c1.jpg'></image>
-    </view>
-    <image class='activity_xc' mode='aspectFit' src='../../images/b2.jpg'></image>
-    <view class='activity_info_pane'>
-      <view class='acrivity_info_title'>
-        <view class='info_left'>2018-10-26</view>
-        <view class='info_right'>融资路演</view>
-      </view>
-      <view class="progress-box">
-        <progress percent="60" active stroke-width="3" />
-      </view>
-      <view class='activity_state'>
-        <view class='state_left'>报名人数：<em class="color_ora">5</em>人 <em class="margin_lt20">状态：报名中</em></view>
-        <view class='state_right'>活动费用： <em class="color_ora">免费</em></view>
-      </view>
-    </view>
-  </view>
-  <!-- activity_list -->
-  <view class='activity_list margin_btm20'>
-    <view class='activity_title'>
-      上海明珠港
-      <image class='activity_log' src='../../images/c1.jpg'></image>
-    </view>
-    <image class='activity_xc' mode='aspectFit' src='../../images/b2.jpg'></image>
-    <view class='activity_info_pane'>
-      <view class='acrivity_info_title'>
-        <view class='info_left'>2018-10-26</view>
-        <view class='info_right'>融资路演</view>
-      </view>
-      <view class="progress-box">
-        <progress percent="60" active stroke-width="3" />
-      </view>
-      <view class='activity_state'>
-        <view class='state_left'>报名人数：<em class="color_ora">5</em>人 <em class="margin_lt20">状态：报名中</em></view>
-        <view class='state_right'>活动费用： <em class="color_ora">免费</em></view>
-      </view>
-    </view>
-  </view>
-  <!-- activity_list -->
+  <import src="../../template/index.wxml" />
+  <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
 
+  <view bindtap='godetail' data-id="{{item.id}}" wx:for="{{listData}}" wx:for-index="idx" wx:for-item="item" class='activity_list margin_btm20'>
+    <view class='activity_title'>
+      {{item.title}}
+      <!-- <image class='activity_log' src='../../images/c1.jpg'></image> -->
+    </view>
+    <image mode='aspectFill' class='activity_xc' src='{{item.img}}'></image>
+    <view class='activity_info_pane'>
+      <view class='acrivity_info_title'>
+        <view class='info_left'>开始时间:{{item.startTime}}</view>
+        <view class='info_right'>{{item.type}}</view>
+      </view>
+      <view class="progress-box">
+        <progress percent="{{item.num / item.personNum * 100}}" active stroke-width="3" />
+      </view>
+      <view class='activity_state'>
+        <view class='state_left'>报名人数：
+          <em class="color_ora">{{item.num}}</em>人
+          <em wx:if="{{item.status === '0'}}" class="margin_lt20">状态：未开始</em>
+          <em wx:if="{{item.status === '1'}}" class="margin_lt20">状态：报名中</em>
+          <em wx:if="{{item.status === '2'}}" class="margin_lt20">状态：已结束</em>
+        </view>
+        <view class='state_right'>活动费用：
+          <em class="color_ora">￥{{item.fee}}</em>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if='{{showunderline}}' class='underline'>人家也是有底线的</view>
+  <!-- activity_list -->
 </view>

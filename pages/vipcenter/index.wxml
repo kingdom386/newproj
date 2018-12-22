@@ -1,29 +1,64 @@
 <view class='center_box'>
-  <image src='../../images/vipcenter.jpeg'></image>
+  <swiper style='height: 340rpx;' autoplay='true' circular='true' duration='500'>
+    <swiper-item wx:for="{{listData}}" wx:for-index='idx' wx:for-item='item'>
+      <image style='width: 100%' src='{{item.img}}'></image>
+    </swiper-item>
+  </swiper>
   <!-- center_box -->
   <view class='vip_jb'>
-    <view class='vip_route'>
-      <view class='vip_dot dot {{curIndex == 0 ? "active" : ""}}' ></view>
-      <view class='vip_dot dot {{curIndex == 1 ? "active" : ""}}'></view>
-      <view class='vip_dot dot {{curIndex == 2 ? "active" : ""}}'></view>
-      <view class='vip_dot vip_tj dot {{curIndex == 3 ? "active" : (curIndex === 4 ? "last" : "")}}'></view>
+    <view class='vip_line'></view>
+    <view class='vip_box'>
+      <view class='vip_item'>
+        <image wx:if='{{curIndex1 === 0}}' class='vip_icon_active' src='../../images/yb_s.jpg'></image>
+        <image bindtap='govip' data-index='0' wx:else class='vip_icon' src='../../images/yb.png'></image>
+      </view>
+      <view class='vip_item'>
+        <image wx:if='{{curIndex2 === 1}}' class='vip_icon_active' src='../../images/cj_s.jpg'></image>
+        <image bindtap='govip' data-index='1' wx:else class='vip_icon' src='../../images/cj.png'></image>
+      </view>
+      <view class='vip_item'>
+        <image wx:if='{{curIndex3 === 2}}' class='vip_icon_active' src='../../images/zj_s.jpg'></image>
+        <image bindtap='govip' data-index='2' wx:else class='vip_icon' src='../../images/zj.png'></image>
+      </view>
+      <view class='vip_item'>
+        <image wx:if='{{curIndex4 === 3}}' class='vip_icon_active' src='../../images/gj_s.jpg'></image>
+        <image bindtap='govip' data-index='3' wx:else class='vip_icon' src='../../images/gj.png'></image>
+      </view>
+      <view class='vip_item'>
+        <image wx:if='{{curIndex5 === 4}}' class='vip_icon_active' src='../../images/tj_s.jpg'></image>
+        <image bindtap='govip' data-index='4' wx:else class='vip_icon' src='../../images/tj.png'></image>
+      </view>
     </view>
-    <view class='vip_jb_txt'>
-      <view class='vip_dj'>预备会员</view>
-      <view class='vip_dj'>初级会员</view>
-      <view class='vip_dj'>中级会员</view>
-      <view class='vip_dj'>高级会员</view>
-      <view class='vip_dj'>特级会员</view>
+  </view>
+  <view class='view_txt'>
+    <view class='view_items'>
+      预备会员
+    </view>
+    <view class='view_items'>
+      初级会员
+    </view>
+    <view class='view_items'>
+      中级会员
+    </view>
+    <view class='view_items'>
+      高级会员
+    </view>
+    <view class='view_items'>
+      特级会员
     </view>
   </view>
   <view class='swiper_box'>
-    <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" bindchange="intervalChange" duration="{{duration}}">
+    <swiper style='min-height: 460rpx;' current="{{curIndex}}" indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" bindchange="intervalChange" duration="{{duration}}">
       <block>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
           <view class='dj_sub'>1、免费浏览、获取协会服务平台（投融天下）资源库信息；</view>
           <view class='dj_sub'>2、在线一般性免费咨询服务；</view>
           <view class='dj_sub'>3、各种单项专业平价收费服务。</view>
+          <view class='dj_price'>
+            <!-- <i>￥</i> -->
+            <strong>免费</strong>
+          </view>
         </swiper-item>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
@@ -35,6 +70,9 @@
           <view class='dj_sub'>6、享有专项投融或附加服务9.5折优惠；</view>
           <view class='dj_sub'>7、投融小助手7*12小时免费服务（9：00-21：00）；</view>
           <view class='dj_sub'>8、对协会工作的监督权；</view>
+          <view class='dj_price'>
+            <i>￥</i>
+            <strong>1988</strong>元/年</view>
         </swiper-item>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
@@ -45,6 +83,9 @@
           <view class='dj_sub'>5、免费参与协会大型年会或主题峰会活动一次；</view>
           <view class='dj_sub'>6、免费享有内部交流，或项目演示，或研讨活动一次；</view>
           <view class='dj_sub'>7、享有专项投融或附加服务9折优惠；</view>
+          <view class='dj_price'>
+            <i>￥</i>
+            <strong>5988</strong>元/年</view>
         </swiper-item>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
@@ -52,11 +93,13 @@
           <view class='dj_sub'>2、免费参与投融精英专享高端商务活动一次；</view>
           <view class='dj_sub'>3、免费享有企业、项目在线特别推荐一次；</view>
           <view class='dj_sub'>4、免费享有一对一对接金融、类金融机构中、高级管理人员 一次；
-
           </view>
           <view class='dj_sub'>5、享有知名专家授课或高端培训最惠待遇一次；</view>
           <view class='dj_sub'>6、享有专项投融或附加服务8.5折优惠；</view>
           <view class='dj_sub'>7、享有专属投融小助手7*12小时一对一服务；</view>
+          <view class='dj_price'>
+            <i>￥</i>
+            <strong>9988</strong>元/年</view>
         </swiper-item>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
@@ -66,8 +109,19 @@
           <view class='dj_sub'>4、免费享有专家诊断服务一次；</view>
           <view class='dj_sub'>5、享有投融产品定制服务；</view>
           <view class='dj_sub'>6、享有专项投融或附加服务8折优惠；</view>
+          <view class='dj_price'>
+            <i>￥</i>
+            <strong>19888</strong>元起/年</view>
         </swiper-item>
       </block>
     </swiper>
+    <view wx:if='{{curIndex !== 0}}' class='apply_btn'>
+      <button wx:if='{{userlevel < curIndex}}' hover-class='hoveractive' bindtap='apply' class='apply'>申请会员</button>
+      <button wx:else hover-class='hoveractive' class='applys'>申请会员</button>
+    </view>
+    <view wx:else class='apply_btn'>
+      <button wx:if='{{hasmobile}}' bindtap='goregister' hover-class='hoveractive' class='apply'>注册会员</button>
+      <button wx:else hover-class='hoveractive' class='applys'>注册会员</button>
+    </view>
   </view>
 </view>

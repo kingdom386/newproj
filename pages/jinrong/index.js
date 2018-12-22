@@ -1,19 +1,34 @@
 // pages/jinrong/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    listData: []
+    listData: [],
+    imgData: []
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var _this = this
-    wx.setNavigationBarTitle({
-      title: '金融+',
+    wx.showLoading({
+      title: '数据加载中...',
+    })
+    wx.request({
+      url: 'https://boss.zjifa.com.cn/web/findList?',
+      data: {
+        position: 0
+      },
+      success(p) {
+        if (p.data.code === 0) {
+          console.log(p.data.data)
+          wx.hideLoading()
+          _this.setData({
+            imgData: p.data.data
+          })
+        }
+      }
     })
   },
   onReady: function () {
@@ -22,7 +37,6 @@ Page({
       url: 'https://boss.zjifa.com.cn/finance/findList',
       method: 'post',
       success (r) {
-        console.log(r.data.data)
         if (r.data.code == 0) {
           _this.setData({
             listData: r.data.data
@@ -35,6 +49,11 @@ Page({
     var id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: '../detail/index?id=' + id,
+    })
+  },
+  goliucheng: function () {
+    wx.navigateTo({
+      url: '../jinrongliucheng/index',
     })
   }
 })

@@ -1,0 +1,62 @@
+<!--pages/xieyi/index.wxml-->
+<view style='padding:20rpx;'>
+  <view style='text-align: center;font-size: 30rpx;color: #333;'>浙江省投融资协会入会须知</view>
+  <view style='font-size: 26rpx;color: #333;line-height: 40rpx;font-weight:bold;'>
+    第一条 会员条件
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    浙江省投融资协会会员分为正式会员（即缴纳会费的会员）和预备会员（即非缴纳会费的会员）两类。
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    凡在中国境内依法登记注册的金融机构、类金融机构、涉及投融资领域的其他机构、合规管理的企业社团组织、热心支持并促进投融资领域健康发展的大型企业和社会机构、从事投融资理论研究并具一定影响的社会组织等，只要承认协会章程，自愿申请入会，均可取得单位会员资格。
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    所有协会正式会员、预备会员均自动成为“投融天下”服务客户，按相应的等级享受“投融天下”的服务。
+  </view>
+
+  <view style='font-size: 26rpx;color: #333;line-height: 40rpx;font-weight:bold;'>
+    第二条 会员权利
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （一）本会的选举权、被选举权和表决权；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （二）优先参加本会举办的活动；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （三）获得本会服务平台专项投融或附加服务优先权；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （四）对本会工作提出批评或建议，实施监督；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （五）入会自愿，退会自由。
+  </view>
+  <view style='font-size: 26rpx;color: #333;line-height: 40rpx;font-weight:bold;'>
+    第三条 会员义务
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （一） 遵守本会章程，执行本会决议；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （二）为人处世诚实守信；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （三） 经营管理依法合规；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （四） 遵循协会提供服务所需的信息管理规则，提供真实有效的数据资料信息；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （五） 按规定足额缴纳会费；
+  </view>
+  <view style='font-size: 24rpx;line-height: 40rpx;color: #333;text-indent: 50rpx;'>
+    （六） 自觉维护本会的声誉和合法权益。
+  </view>
+  <view style='font-size: 26rpx;color: #333;line-height: 40rpx;font-weight:bold;'>
+    第四条　会员退会应书面通知本协会，并交回会员证。
+  </view>
+  <view style='font-size: 26rpx;color: #333;line-height: 40rpx;font-weight:bold;'>
+    第五条　会员如有严重违反本章程或严重违法违规的行为，经理事会表决通过，予以除名，并向社会通报。
+  </view>
+</view>
