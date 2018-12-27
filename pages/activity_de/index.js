@@ -95,17 +95,25 @@ Page({
                 success(p) {
                   console.log(p)
                   if (p.data.code === 0) {
-                    wx.showModal({
-                      content: p.data.msg,
-                      showCancel: false
+                    // wx.showModal({
+                    //   content: p.data.msg,
+                    //   showCancel: false
+                    // })
+                    wx.showToast({
+                      title: p.data.msg,
+                      icon: 'none'
                     })
                     _this.setData({
                       collection: false
                     })
                   } else {
-                    wx.showModal({
-                      content: p.data.msg,
-                      showCancel: false
+                    // wx.showModal({
+                    //   content: p.data.msg,
+                    //   showCancel: false
+                    // })
+                    wx.showToast({
+                      title: p.data.msg,
+                      icon: 'none'
                     })
                     _this.setData({
                       collection: true
@@ -148,7 +156,6 @@ Page({
           },
           success(p) {
             if (p.data.code === 0) {
-              // console.log(p.data.data.phone)
               wx.hideLoading()
               var phone = p.data.data.phone
               var openid = p.data.data.openid
@@ -164,35 +171,40 @@ Page({
                   success(p) {
                     if (p.data.code === 0) {
                       console.log(p.data.data)
-                      wx.showModal({
-                        content: '报名成功！',
-                        showCancel: false,
-                        success(res) {
-                          wx.navigateTo({
-                            url: '../pay/index?fee=' + fee + '&orderId=' + encodeURIComponent(JSON.stringify(p.data.data)) + '&payType=2'
-                          })
-                        }
+                      setTimeout(function() {
+                        wx.navigateTo({
+                          url: '../pay/index?fee=' + fee + '&orderId=' + encodeURIComponent(JSON.stringify(p.data.data)) + '&payType=2'
+                        })
+                      }, 1500)
+
+                    } else if (p.data.code === 200) {
+                      wx.showToast({
+                        title: p.data.msg,
+                        icon: 'none'
                       })
+                      setTimeout(function() {
+                        wx.navigateTo({
+                          url: '../activity/index'
+                        })
+                      }, 1500)
                     } else {
-                      wx.showModal({
-                        content: p.data.msg,
-                        showCancel: false
+                      wx.showToast({
+                        title: p.data.msg,
+                        icon: 'none'
                       })
                     }
                   }
                 })
               } else {
-                wx.showModal({
-                  content: '请绑定手机号码！',
-                  showCancel: false,
-                  success(res) {
-                    if (res.confirm) {
-                      wx.navigateTo({
-                        url: '../register/index',
-                      })
-                    }
-                  }
+                wx.showToast({
+                  title: '请绑定手机号码！',
+                  icon: 'none'
                 })
+                setTimeout(function() {
+                  wx.navigateTo({
+                    url: '../register/index',
+                  })
+                }, 1600)
               }
             }
           }

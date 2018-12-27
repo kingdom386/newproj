@@ -116,9 +116,9 @@ Page({
   },
   checkuser(e) {
     var val = e.detail.value
-    var reg = /^[a-zA-Z0-9_-]{4,16}$/
-    var username = /^[\u4e00-\u9fff\w]{2,16}$/
-    if (reg.test(val) || username.test(val)) {
+    // var reg = /^[a-zA-Z0-9_-]{4,16}$/
+    // var username = /^[\u4e00-\u9fff\w]{2,16}$/
+    if (val) {
       this.setData({
         username: val,
         showuser: true
@@ -175,15 +175,15 @@ Page({
           }
         })
       } else {
-        wx.showModal({
-          content: '请稍后再试！',
+        wx.showToast({
+          title: '请稍后再试！',
+          icon: 'none',
         })
       }
     } else {
       wx.showToast({
         title: '请检查手机号！',
         icon: 'none',
-        image: '../../images/prompt_fill.png'
       })
     }
   },
@@ -206,9 +206,8 @@ Page({
     var _this = this
     if (!_this.data.showuser) {
       wx.showToast({
-        title: '联系人信息有误！',
+        title: '请输入法人或授权代表',
         icon: 'none',
-        image: '../../images/prompt_fill.png'
       })
       return false;
     }
@@ -216,18 +215,16 @@ Page({
       wx.showToast({
         title: '手机号码有误！',
         icon: 'none',
-        image: '../../images/prompt_fill.png'
       })
       return false;
     }
-    if (!_this.data.showcode) {
-      wx.showToast({
-        title: '验证码错误！',
-        icon: 'none',
-        image: '../../images/prompt_fill.png'
-      })
-      return false;
-    }
+    // if (!_this.data.showcode) {
+    //   wx.showToast({
+    //     title: '验证码错误！',
+    //     icon: 'none',
+    //   })
+    //   return false;
+    // }
     // if (_this.data.showqyadd) {
     //   wx.showToast({
     //     title: '请上传企业介绍！',
@@ -285,23 +282,21 @@ Page({
                 },
                 success(p) {
                   if (p.data.code === 0) {
-                    wx.showModal({
-                      content: p.data.msg,
-                      showCancel: false,
-                      success(res) {
-                        if (res.confirm) {
-                          wx.navigateTo({
-                            url: '../pay/index?fee=' + p.data.data.fee + '&orderId=' + encodeURIComponent(p.data.data.orderId) + '&payType=1',
-                          })
-                        }
-                      }
+                    wx.showToast({
+                      title: p.data.msg,
+                      icon: 'none'
                     })
+                    setTimeout(function() {
+                      wx.navigateTo({
+                        url: '../pay/index?fee=' + p.data.data.fee + '&orderId=' + encodeURIComponent(p.data.data.orderId) + '&payType=1',
+                      })
+                    }, 1600)
                   } else {
                     console.log("p:")
                     console.log(p)
-                    wx.showModal({
-                      content: p.data.msg,
-                      showCancel: false
+                    wx.showToast({
+                      title: p.data.msg,
+                      icon: 'none'
                     })
                   }
                 },

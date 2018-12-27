@@ -21,5 +21,16 @@ Page({
         console.log(res)
       }
     })
-  }
+  },
+  gettxt: function (e) {
+    wx.setClipboardData({
+      data: '78508100394837',
+      success (res) {
+        wx.showToast({
+          title: '复制成功！',
+          icon: 'none'
+        })
+      }
+    })
+  } 
 })

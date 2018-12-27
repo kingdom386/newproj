@@ -31,12 +31,12 @@
     </view>
     <view class='box'>
       <view class='left'>
-        <i class='iconfont icon-youxiang' style='float:left;font-size: 44rpx;line-height: 40rpx;margin-right: 10rpx;'></i>账号：</view>
-      <view class='right'>78508100394837</view>
+        账号：</view>
+      <view bindtap='gettxt' class='right'>78508100394837</view>
     </view>
     <view class='box'>
       <view class='left'>
-        <i class='iconfont icon-dizhi' style='float:left;font-size: 44rpx;line-height: 40rpx;margin-right: 10rpx;'></i>开户行：</view>
+        开户行：</view>
       <view class='right'>杭州银行高新支行
       </view>
     </view>

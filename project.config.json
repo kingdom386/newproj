@@ -40,8 +40,8 @@
 				{
 					"id": 0,
 					"name": "page",
-					"pathName": "pages/mine/index",
-					"query": "fee=0.01&orderId=%7B%22appId%22%3A%22wxfcc7ea45e6aa25de%22%2C%22nonceStr%22%3A%221545494022100%22%2C%22orderId%22%3A%2239ec0b9f291149f7a9e52f371c533b37%22%2C%22package%22%3A%22prepay_id%3Dwx2223534217279075c51c7c0f3565079622%22%2C%22paySign%22%3A%22B34E8D3A5A99E5055E2BF1B13C0FFD75%22%2C%22signType%22%3A%22MD5%22%2C%22timeStamp%22%3A%221545494022%22%7D&payType=2",
+					"pathName": "pages/pay/index",
+					"query": "",
 					"scene": "1001"
 				}
 			]

@@ -2,6 +2,11 @@
 @import '../../lib/icon.wxss';
 @import "../../wxParse/wxParse.wxss";
 
+.wxParse-p {
+  position: relative;
+  font-size: 26rpx;
+}
+
 .zixun_box {
   padding: 20rpx;
 }

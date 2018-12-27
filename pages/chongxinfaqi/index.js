@@ -52,17 +52,57 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '产品申请',
     })
     this.data.financeId = options.id
+    this.getdata(options)
+  },
+  getdata(options) {
+    var _this = this
+    wx.showLoading({
+      title: '获取数据中...',
+    })
+    wx.request({
+      url: 'https://boss.zjifa.com.cn/member/financeDetail',
+      data: {
+        financeId: options.id,
+        userId: options.userid
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(p) {
+        console.log(p.data.data)
+        if (p.data.code === 0) {
+          var dt = p.data.data
+          wx.hideLoading();
+          _this.setData({
+            company: dt.company,
+            money: dt.money,
+            region: dt.address.match(/.+?(省|市|自治区|自治州|县|区)/g),
+            time: dt.time,
+            purpose: dt.purpose,
+            username: dt.username,
+            phone: dt.phone,
+            a: true,
+            b: true,
+            c: true,
+            d: true,
+            e: true,
+            f: true,
+          })
+        }
+      }
+    })
   },
   timers() {
     var _this = this
     clearInterval(_this.data.timer)
     var t = 60
-    _this.data.timer = setInterval(function() {
+    _this.data.timer = setInterval(function () {
       if (t >= 1) {
         t -= 1;
         _this.setData({
@@ -76,7 +116,7 @@ Page({
       }
     }, 1000)
   },
-  chooseImage: function(e) {
+  chooseImage: function (e) {
     var that = this;
     var tp = e.currentTarget.dataset.img
     var imgurl = ''
@@ -84,14 +124,14 @@ Page({
       count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function(res) {
+      success: function (res) {
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
           url: 'https://boss.zjifa.com.cn/file/uploadFile',
           filePath: tempFilePaths[0],
           name: 'file',
           success(d) {
-            console.log(typeof(JSON.parse(d.data)))
+            console.log(typeof (JSON.parse(d.data)))
             var resp = JSON.parse(d.data)
             imgurl = resp.data
             if (resp.code === 0) {
@@ -136,14 +176,14 @@ Page({
       }
     })
   },
-  bindRegionChange: function(e) {
+  bindRegionChange: function (e) {
     this.setData({
       region: e.detail.value,
       province: e.detail.value[0],
       city: e.detail.value[1],
     })
   },
-  cmp: function(e) {
+  cmp: function (e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -159,7 +199,7 @@ Page({
       })
     }
   },
-  mny: function(e) {
+  mny: function (e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -175,7 +215,7 @@ Page({
       })
     }
   },
-  tme: function(e) {
+  tme: function (e) {
     var _this = this
     var reg = /^\d+$/
     var val = e.detail.value
@@ -191,7 +231,7 @@ Page({
       })
     }
   },
-  pur: function(e) {
+  pur: function (e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -206,9 +246,7 @@ Page({
       })
     }
   },
-  nme: function(e) {
-    // var reg = /^[a-zA-Z0-9_-]{4,16}$/
-    // var username = /^[\u4e00-\u9fff\w]{2,16}$/
+  nme: function (e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -223,7 +261,7 @@ Page({
       })
     }
   },
-  phn: function(e) {
+  phn: function (e) {
     var reg = /^1(3|4|5|7|8)\d{9}$/
     var _this = this
     var val = e.detail.value
@@ -239,7 +277,7 @@ Page({
       })
     }
   },
-  checkcode: function(e) {
+  checkcode: function (e) {
     var val = e.detail.value
     var reg = /^\d{6}$/
     if (reg.test(val)) {
@@ -254,7 +292,7 @@ Page({
       })
     }
   },
-  radiochange: function(e) {
+  radiochange: function (e) {
     console.log(e.detail.value)
     if (e.detail.value.length > 0) {
       this.setData({
@@ -266,7 +304,7 @@ Page({
       })
     }
   },
-  goxieyi: function() {
+  goxieyi: function () {
     wx.navigateTo({
       url: '../mianze/index',
     })
@@ -287,7 +325,7 @@ Page({
           url: 'https://boss.zjifa.com.cn/sendCode',
           data: {
             phone: phone,
-            type: 0
+            type: 4
           },
           method: 'post',
           header: {
@@ -313,7 +351,7 @@ Page({
       })
     }
   },
-  formSubmit: function(e) {
+  formSubmit: function (e) {
     var _this = this
     if (!_this.data.a) {
       wx.showToast({
@@ -329,7 +367,7 @@ Page({
       })
       return false;
     }
-    console.log(_this.data.region)
+    // console.log(_this.data.region)
     if (_this.data.region.length <= 1) {
       wx.showToast({
         title: '请选择地区!',
@@ -373,52 +411,7 @@ Page({
       })
       return false;
     }
-    // if (_this.data.showidcardfront) {
-    //   wx.showToast({
-    //     title: '请上传身份证正面!',
-    //     image: '../../images/prompt_fill.png'
-    //   })
-    //   return false;
-    // }
-    // if (_this.data.showidcardback) {
-    //   wx.showToast({
-    //     title: '请上传身份证反面!',
-    //     image: '../../images/prompt_fill.png'
-    //   })
-    //   return false;
-    // }
-    // if (_this.data.showyyzz) {
-    //   wx.showToast({
-    //     title: '请上传营业执照!',
-    //     image: '../../images/prompt_fill.png'
-    //   })
-    //   return false;
-    // }
-
-    // if (_this.data.showyyzz) {
-    //   wx.showToast({
-    //     title: '请上传营业执照!',
-    //     image: '../../images/prompt_fill.png'
-    //   })
-    //   return false;
-    // }
-
-    // if (_this.data.showxycx) {
-    //   wx.showToast({
-    //     title: '请上传信用授权书!',
-    //     image: '../../images/prompt_fill.png'
-    //   })
-    //   return false;
-    // }
-
-    // if (_this.data.showrzf) {
-    //   wx.showToast({
-    //     title: '请上传企业财务信息!',
-    //     image: '../../images/prompt_fill.png'
-    //   })
-    //   return false;
-    // }
-
+    
     if (!_this.data.ag) {
       wx.showToast({
         title: '请同意免责协议!',
@@ -428,7 +421,7 @@ Page({
     }
 
     wx.login({
-      success: function(res) {
+      success: function (res) {
         if (res.code) {
           wx.request({
             url: 'https://boss.zjifa.com.cn/member/login',
@@ -474,22 +467,11 @@ Page({
                     console.log(r)
                     if (r.data.code === 0) {
                       wx.hideLoading()
-                      // wx.showModal({
-                      //   content: r.data.msg,
-                      //   showCancel: false,
-                      //   success (res) {
-                      //     if (res.confirm) {
-                      //       wx.navigateTo({
-                      //         url: '../main/index',
-                      //       })
-                      //     }
-                      //   }
-                      // })
                       wx.showToast({
                         title: r.data.msg,
                         icon: 'none'
                       })
-                      setTimeout(function() {
+                      setTimeout(function () {
                         wx.navigateTo({
                           url: '../main/index',
                         })
@@ -508,8 +490,8 @@ Page({
           })
         }
       },
-      fail: function(res) {},
-      complete: function(res) {},
+      fail: function (res) { },
+      complete: function (res) { },
     })
   }
 })

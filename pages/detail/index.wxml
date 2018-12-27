@@ -20,6 +20,6 @@
     </view>
   </view>
   <view class='wx_btn_pane'>
-    <button style='background:#1296db;' class="weui-btn mini-btn" bindtap='apply' type="primary" size="mini">立即申请</button>
+    <button style='background:#cc935c;' class="weui-btn mini-btn" bindtap='apply' type="primary" size="mini">立即申请</button>
   </view>
 </view>

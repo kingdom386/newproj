@@ -67,17 +67,26 @@ Page({
                     url: '../jinrongshenqing/index?id=' + _this.data.fid,
                   })
                 } else {
-                  wx.showModal({
-                    content: '请绑定手机号码！',
-                    showCancel: false,
-                    success(res) {
-                      if (res.confirm) {
-                        wx.navigateTo({
-                          url: '../register/index',
-                        })
-                      }
-                    }
+                  // wx.showModal({
+                  //   content: '请绑定手机号码！',
+                  //   showCancel: false,
+                  //   success(res) {
+                  //     if (res.confirm) {
+                  //       wx.navigateTo({
+                  //         url: '../register/index',
+                  //       })
+                  //     }
+                  //   }
+                  // })
+                  wx.showToast({
+                    title: '请绑定手机号码！',
+                    icon: 'none'
                   })
+                  setTimeout(function() {
+                    wx.navigateTo({
+                      url: '../register/index',
+                    })
+                  }, 1600)
                 }
               }
             }

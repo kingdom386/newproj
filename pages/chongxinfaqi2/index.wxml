@@ -16,7 +16,7 @@
         <view class="weui-label">*服务需求：</view>
       </view>
       <view class="weui-cell__bd">
-        <textarea bindblur='checkxuqiu' style='height: 120rpx;font-size: 24rpx;' placeholder='服务需求' name="textarea" />
+        <textarea bindblur='checkxuqiu' style='height: 120rpx;font-size: 24rpx;' placeholder='服务需求' value='{{demand}}' name="textarea" />
       </view>
       <view wx:if="{{!showmobilerror}}" class="weui-cell__ft">
       </view>
@@ -27,7 +27,7 @@
         <view class="weui-label">*联系人：</view>
       </view>
       <view class="weui-cell__bd">
-        <input bindblur='checkusername' class="weui-input" placeholder="请输入联系人" />
+        <input bindblur='checkusername' value='{{username}}' class="weui-input" placeholder="请输入联系人" />
       </view>
       <view wx:if="{{!showusererror}}" class="weui-cell__ft">
       </view>
@@ -38,7 +38,7 @@
         <view class="weui-label">*手机号码：</view>
       </view>
       <view class="weui-cell__bd">
-        <input bindblur='checkmobile' class="weui-input" placeholder="请输入手机号码" />
+        <input bindblur='checkmobile' value='{{phone}}' class="weui-input" placeholder="请输入手机号码" />
       </view>
       <view wx:if="{{!showusererror}}" class="weui-cell__ft">
       </view>

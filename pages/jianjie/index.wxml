@@ -1,6 +1,7 @@
 <view class='jianjie_box'>
   <view class='jianjie'>平台简介</view>
-  <image mode="widthFix" style='width: 100%' src='../../images/banner.png'></image>
+  <image class='img' src="../../images/logo.png"></image>
+  <!-- <image mode="widthFix" style='width: 100%' src='../../images/banner.png'></image> -->
   <!-- <image class='intro_img' src='../../images/c1.jpg'></image>
   <image class='intro' src="../../images/logo.png"></image> -->
   <view class='ptjs_c'>
@@ -9,7 +10,6 @@
   <view class='ptjs_c'>
     协会旨在顺应现代金融多元化、混合化和创新化的发展趋势，通过发挥第三方平台的牵头、纽带和服务功能，整合政府、金融机构和民间资本等各种资源，加强信息沟通、人际交流和业务合作，组织开发投融资产品、创新投融资模式、拓展投融资市场，为破解中小企业融资难和民间资本投资难，促进金融（类金融）机构和其他企业的发展壮大而创造有利条件，提供有效服务。
   </view>
-  <image class='img' src="../../images/logo.png"></image>
   <view class='ptjs'>服务内容：</view>
   <view class='ptjs_i'>1、帮助政府、金融（类金融）机构和其他企事业单位相互之间的信息沟通； </view>
   <view class='ptjs_i'>2、组织金融（类金融）机构共同研发、推广投融资产品； </view>

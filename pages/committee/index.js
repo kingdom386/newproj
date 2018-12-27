@@ -23,10 +23,14 @@ Page({
   onReady: function () {
   },
   coding: function () {
-    wx.showModal({
-      title: '信息提示',
-      content: '模块功能正在开发中,尽请期待！',
-      showCancel: false
+    // wx.showModal({
+    //   title: '信息提示',
+    //   content: '模块功能正在开发中,尽请期待！',
+    //   showCancel: false
+    // })
+    wx.showToast({
+      title: '模块功能正在开发中,尽请期待！',
+      icon: 'none'
     })
   }
 })

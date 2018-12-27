@@ -5,12 +5,12 @@
   </view>
   <view class='shoucang_box'>
     <view bindtap='godetail' data-types='{{types}}' data-id='{{item.id}}' class='shoucang_item' wx:for='{{listData}}' wx:for-index='idx' wx:for-item='item'>
-      <view wx:if='{{types === 1}}' style='padding-left: 20rpx;height: 80rpx;color: #333;font-size: 28rpx;line-height: 80rpx;  border-bottom: 1px solid #dcdfe6;'>{{item.title}}</view>
+      <view wx:if='{{types === 1}}' style='padding-left: 20rpx;height: 80rpx;color: #333;font-size: 28rpx;line-height: 80rpx;  border-bottom: 1px solid #dcdfe6;'>{{item.name}}</view>
       <image wx:if='{{types === 1}}' mode='aspectFill' src='{{item.img}}' class='img'></image>
       <view wx:if='{{types === 1}}' class='shoucang_pane'>
         <view class='acrivity_info_title'>
           <view class='info_left'>开始时间:{{item.startTime}}</view>
-          <view class='info_right'>{{item.type}}</view>
+          <view class='info_right'>{{item.title}}</view>
         </view>
         <view class="progress-box">
           <progress percent="{{item.num / item.personNum * 100}}" active stroke-width="3" />

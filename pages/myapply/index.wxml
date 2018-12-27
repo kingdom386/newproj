@@ -7,7 +7,7 @@
 
   <view class='swiper_box'>
     <view wx:if="{{listData.length > 0}}" wx:for="{{listData}}" wx:for-item="item" class='swiper_item'>
-      <view class='swiepr_left'>
+      <view wx:if='{{curindex === "1"}}' class='swiepr_left'>
         <view class='left_title' wx:if='{{item.status === 0}}'>
           <em class="margin-rt">{{item.name}}</em> 状态：待审核</view>
         <view class='left_title' wx:elif='{{item.status === 1}}'>
@@ -18,9 +18,24 @@
           <em class="margin-rt">{{item.name}}</em> 状态：已撤销</view>
         <view class='left_title color_gray'>申请时间：{{item.addTime}}</view>
       </view>
-      <view class='swiper_right'>
+      <view wx:if='{{curindex === "2"}}' class='swiepr_left'>
+        <view class='left_title' wx:if='{{item.status === 0}}'>
+          <em class="margin-rt">{{item.typeMsg}}</em> 状态：待审核</view>
+        <view class='left_title' wx:elif='{{item.status === 1}}'>
+          <em class="margin-rt">{{item.typeMsg}}</em> 状态：已通过</view>
+        <view class='left_title' wx:elif='{{item.status === 2}}'>
+          <em class="margin-rt">{{item.typeMsg}}</em> 状态：已驳回</view>
+          <view class='left_title' wx:elif='{{item.status === 3}}'>
+          <em class="margin-rt">{{item.typeMsg}}</em> 状态：已撤销</view>
+        <view class='left_title color_gray'>申请时间：{{item.addTime}}</view>
+      </view>
+      <view wx:if='{{curindex === "1"}}' class='swiper_right'>
         <button bindtap='revoke' data-id='{{item.id}}' wx:if='{{item.status === 0}}' size='mini' class='opera_btn'>撤销</button>
         <button bindtap='again' wx:if='{{item.status === 2}}' data-id='{{item.id}}' size='mini' class='opera_btn'>重新发起</button>
+      </view>
+      <view wx:if='{{curindex === "2"}}' class='swiper_right'>
+        <button bindtap='revoke' data-id='{{item.id}}' wx:if='{{item.status === 0}}' size='mini' class='opera_btn'>撤销</button>
+        <button bindtap='again' wx:if='{{item.status === 2}}' data-id='{{item.id}}' data-name='{{item.typeMsg}}' size='mini' class='opera_btn'>重新发起</button>
       </view>
     </view>
     <!-- swiper_item -->
@@ -32,16 +47,6 @@
       </view>
       <view class='swiper_right'>
         <button size='mini' class='opera_btn'>撤销</button>
-      </view>
-    </view> -->
-
-    <!-- <view class='swiper_item'>
-      <view class='swiepr_left'>
-        <view class='left_title'> <em class="margin-rt">拍拍贷</em> 状态：已结束</view>
-        <view class='left_title color_gray'>申请时间：2018.12.23 12:10:10</view>
-      </view>
-      <view class='swiper_right'>
-        <button size='mini' class='opera_btn'>重新发起</button>
       </view>
     </view> -->
 

@@ -101,9 +101,13 @@ Page({
                   success(res) {
                     console.log(res)
                     if (res.data.code === 0) {
-                      wx.showModal({
-                        content: res.data.msg,
-                        showCancel: false
+                      // wx.showModal({
+                      //   content: res.data.msg,
+                      //   showCancel: false
+                      // })
+                      wx.showToast({
+                        title: res.data.msg,
+                        icon: 'none'
                       })
                       _this.setData({
                         col: false

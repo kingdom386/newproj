@@ -40,7 +40,6 @@ Page({
     _this.data.timer = setInterval(function() {
       if (t >= 1) {
         t -= 1;
-        console.log(_this.data.msg)
         _this.setData({
           msg: t + 's'
         })
@@ -65,15 +64,11 @@ Page({
         phone: '',
         showmobile: false
       })
-      wx.showModal({
-        content: '输入的手机号码有误!',
-        showCancel: false
-      })
     }
   },
   sendcode(e) {
     var _this = this
-    var reg = /^1(3|4|5|7|8)\d{9}$/
+    var reg = /^1(3|4|5|7|8|9)\d{9}$/
     var phone = _this.data.phone
     if (reg.test(_this.data.phone)) {
       if (_this.data.sendcode) {
@@ -101,15 +96,16 @@ Page({
           }
         })
       } else {
-        wx.showModal({
-          content: '请稍后再试！',
+        wx.showToast({
+          title: '请稍后再试！',
+          icon: 'none'
         })
       }
     } else {
-      wx.showModal({
-        content: '请检查输入的手机号码是否有误！',
-        showCancel: false
-      })
+      // wx.showToast({
+      //   title: '手机号码有误！',
+      //   icon: 'none'
+      // })
     }
   },
   checkcode(e) {
@@ -125,10 +121,10 @@ Page({
         code: '',
         showcode: false
       })
-      wx.showModal({
-        content: '输入的验证码格式有误！',
-        showCancel: false
-      })
+      // wx.showToast({
+      //   title: '输入的验证码格式有误！',
+      //   icon: 'none',
+      // })
     }
   },
   radiochange(e) {
@@ -175,24 +171,22 @@ Page({
                       'content-type': 'application/x-www-form-urlencoded'
                     },
                     success(p) {
-                      if (p.data.code === 0) {
+                      if (p.data.code === 200) {
                         wx.hideLoading()
-                        wx.showModal({
-                          content: p.data.msg,
-                          showCancel: false,
-                          success (res) {
-                            if (res.confirm) {
-                              wx.navigateTo({
-                                url: '../main/index',
-                              })
-                            }
-                          }
+                        wx.showToast({
+                          title: '绑定成功！',
                         })
+                        setTimeout(function() {
+                          console.log(22);
+                          wx.navigateTo({
+                            url: '../main/index',
+                          })
+                        }, 1600)
                       } else {
                         wx.hideLoading()
-                        wx.showModal({
-                          content: p.data.msg,
-                          showCancel: false
+                        wx.showToast({
+                          title: p.data.msg,
+                          icon: 'none',
                         })
                       }
                     }
@@ -207,24 +201,24 @@ Page({
       })
     } else {
       if (!_this.data.checked) {
-        wx.showModal({
-          content: '请勾选同意协议！',
-          showCancel: false
+        wx.showToast({
+          title: '请勾选同意协议！',
+          icon: 'none',
         })
       } else {
-        wx.showModal({
-          content: '请检查填写的绑定信息是否有误！',
-          showCancel: false
+        wx.showToast({
+          title: '请检查填写的绑定信息是否有误！',
+          icon: 'none',
         })
       }
     }
   },
-  goxieyi: function () {
+  goxieyi: function() {
     wx.navigateTo({
       url: '../xieyi/index',
     })
   },
-  skip: function (e) {
+  skip: function(e) {
     console.log(e);
     wx.navigateTo({
       url: '../main/index',

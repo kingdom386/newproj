@@ -3,7 +3,7 @@ var template = require('../../template/index.js');
 Page({
   data: {
     imgUrls: [],
-    swiperImg: '../../images/c1.jpg',
+    // swiperImg: '../../images/c1.jpg',
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -69,9 +69,9 @@ Page({
             })
           })
         } else {
-          wx.showModal({
-            title: '申请提示',
-            content: p.data.msg,
+          wx.showToast({
+            title: p.data.msg,
+            icon: 'none'
           })
         }
       },

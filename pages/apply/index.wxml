@@ -5,7 +5,7 @@
         <view class="weui-label">*联系人：</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" bindblur='checkuser' name="username" placeholder="请输入联系人" />
+        <input class="weui-input" bindblur='checkuser' name="username" placeholder="请输入法人或授权代表" />
       </view>
       <view wx:if="{{!showusererror}}" class="weui-cell__ft">
       </view>
@@ -101,6 +101,6 @@
   </view>
   <view class="button-sp-area">
     <button style='background:#cd935c;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">提交</button>
-    <button class="weui-btn mini-btn" formType="reset" type="warn" size="mini">重置</button>
+    <button class="weui-btn mini-btn" formType="reset" size="mini">重置</button>
   </view>
 </form>

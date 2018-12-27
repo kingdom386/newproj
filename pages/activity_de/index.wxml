@@ -4,8 +4,8 @@
     <!--  -->
     <view class='de_title'>
       <view class="de_content">
-        <view class='title'>{{listData.title}}</view>
-        <view class='de_other margin-btm20'>{{listData.name}}</view>
+        <view class='title'>{{listData.name}}</view>
+        <view class='de_other margin-btm20'>{{listData.title}}</view>
         <view class='de_other'>{{listData.type}}</view>
       </view>
     </view>
@@ -37,21 +37,21 @@
   <view class='wanna_go'>
     <view class='wanna_title'>已有
       <em>{{listData.num}}</em>人报名
-      <view class='color_blue' style='float:right;'>展开所有
+      <!-- <view class='color_blue' style='float:right;'>展开所有
         <i class="iconfont icon-unfold"></i>
-      </view>
+      </view> -->
     </view>
-    <view wx:if='{{listData.num > 0}}' class='wanna_de'>
+    <!-- <view wx:if='{{listData.num > 0}}' class='wanna_de'>
       <view wx:for='{{listData.lists}}' class='wanna_item'>
         <image class='wanna_img' src='http://i2.bvimg.com/671793/d92c7cb5b6a912eb.jpg'></image>
       </view>
-    </view>
+    </view> -->
 
-    <view wx:else class='wanna_de'>
+    <!-- <view wx:else class='wanna_de'>
       <view class='wanna_item'>
         暂无报名
       </view>
-    </view>
+    </view> -->
   </view>
 
   <view class='wanna_go'>

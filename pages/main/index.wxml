@@ -28,7 +28,7 @@
       </view>
     </view>
     <view class='wx_cols' bindtap='tourongfuwu'>
-      <image class='index_icon' lazy-load='true' src='../../images/fw.jpg'></image>
+      <image class='index_icon' lazy-load='true' src='../../images/fw.png'></image>
       <view class='wx_txt' style='width: 100%'>
         <text>投融服务</text>
       </view>
@@ -42,8 +42,8 @@
   </view>
 
   <view class='com_intro'>
-    <view class='com_title'>协会简介
-      <view bindtap='detail' class='com_title_right'>详情
+    <view class='com_title' bindtap='detail'>协会简介
+      <view class='com_title_right'>详情
         <i class="iconfont icon-enter" style="float:right; line-height: 36rpxrpx;margin-top: 0rpx;"></i>
       </view>
     </view>
@@ -76,8 +76,8 @@
   </view>
 
   <view class='com_intro'>
-    <view class='com_title'>会员企业展示
-      <view style='float: right;' bindtap='search'>
+    <view bindtap='search' class='com_title'>会员企业展示
+      <view style='float: right;'>
         <i class="iconfont icon-enter"></i>
       </view>
     </view>

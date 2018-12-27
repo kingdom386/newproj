@@ -73,6 +73,7 @@ page{
 
 .activity_xc {
   width: 100%;
+  height: 400rpx;
   background: #909399;
 }
 

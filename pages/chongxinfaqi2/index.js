@@ -22,22 +22,48 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     console.log(options)
     var _this = this
     _this.setData({
       typename: options.name,
       id: options.id
     })
-    wx.setNavigationBarTitle({
-      title: '投融服务申请',
+    _this.getData(options)
+  },
+  getData (obj) {
+    var _this = this
+    wx.request({
+      url: 'https://boss.zjifa.com.cn/member/invertDetail',
+      data: {
+        invertId: obj.id,
+        userId: obj.userid
+      },
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(p) {
+        if (p.data.code === 0) {
+          var dt = p.data.data
+          console.log(dt)
+          _this.setData({
+            demand: dt.demand,
+            username: dt.username,
+            phone: dt.phone,
+            showxuqiu: true,
+            showusername: true,
+            showmobile: true,
+          })
+        }
+      }
     })
   },
   timers() {
     var _this = this
     clearInterval(_this.data.timer)
     var t = 60
-    _this.data.timer = setInterval(function() {
+    _this.data.timer = setInterval(function () {
       if (t >= 1) {
         t -= 1;
         _this.setData({
@@ -51,7 +77,7 @@ Page({
       }
     }, 1000)
   },
-  checkxuqiu: function(e) {
+  checkxuqiu: function (e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -66,7 +92,7 @@ Page({
       })
     }
   },
-  checkusername: function(e) {
+  checkusername: function (e) {
     var _this = this
     var val = e.detail.value
     if (val) {
@@ -112,7 +138,7 @@ Page({
           url: 'https://boss.zjifa.com.cn/sendCode',
           data: {
             phone: phone,
-            type: 7
+            type: 1
           },
           method: 'post',
           header: {
@@ -186,7 +212,7 @@ Page({
     //   return false;
     // }
     wx.login({
-      success: function(res) {
+      success: function (res) {
         if (res.code) {
           wx.request({
             url: 'https://boss.zjifa.com.cn/member/login',
@@ -222,7 +248,7 @@ Page({
                       title: p.data.msg,
                       icon: 'none'
                     })
-                    setTimeout(function() {
+                    setTimeout(function () {
                       wx.navigateTo({
                         url: '../mine/index',
                       })

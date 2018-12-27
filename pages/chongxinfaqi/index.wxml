@@ -1,0 +1,177 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*融资主体：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindblur="cmp" value='{{company}}' name="company" placeholder="请输入公司主体名称" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*融资金额：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindblur="mny" value='{{money}}'  name="money" placeholder="请输入融资金额（万元）" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*所属区域：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0] === '' ? '': region[0]}} {{region[1] === '' ? '': region[1]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*融资期限：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindblur="tme" value='{{time}}' name="time" placeholder="请输入融资期限（年）" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*资金用途：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindblur="pur" value='{{purpose}}' name="purpose" placeholder="请说明资金用途" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*联系人：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindblur="nme" value='{{username}}' name="username" placeholder="请输入联系人姓名" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*手机号码：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindblur="phn" value='{{phone}}' name="phone" placeholder="请输入手机号码" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">*验证码：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" maxlength='6' bindblur='checkcode' name="code" placeholder="请输入验证码" />
+      </view>
+      <view class="weui-cell__ft">
+        <view bindtap='sendcode' class="weui-vcode-btn">{{msg}}</view>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">身份证(正反面)：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{front}}" wx:key="*this">
+            <view class="weui-uploader__file" bindtap="previewImage">
+              <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            </view>
+          </block>
+        </view>
+        <view class="weui-uploader__input-box {{showidcardfront ? '':'disnone'}}">
+          <view class="weui-uploader__input" data-img="front" bindtap="chooseImage"></view>
+        </view>
+        <view class="weui-uploader__files">
+          <block wx:for="{{back}}" wx:key="*this">
+            <view class="weui-uploader__file" bindtap="previewImage">
+              <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            </view>
+          </block>
+        </view>
+        <view class="weui-uploader__input-box {{showidcardback ? '':'disnone'}}">
+          <view class="weui-uploader__input" data-img="back" bindtap="chooseImage"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">营业执照：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{yyzz}}" wx:key="*this">
+            <view class="weui-uploader__file" bindtap="previewImage">
+              <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            </view>
+          </block>
+        </view>
+        <view class="weui-uploader__input-box {{showyyzz ? '':'disnone'}}">
+          <view class="weui-uploader__input" data-img="yyzz" bindtap="chooseImage"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">个人及企业信用信息查询授权书：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{xycx}}" wx:key="*this">
+            <view class="weui-uploader__file" bindtap="previewImage">
+              <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            </view>
+          </block>
+        </view>
+        <view class="weui-uploader__input-box {{showxycx ? '':'disnone'}}">
+          <view class="weui-uploader__input" data-img="xycx" bindtap="chooseImage"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">融资方及企业财务信息：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{rzf}}" wx:key="*this">
+            <view class="weui-uploader__file" bindtap="previewImage">
+              <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            </view>
+          </block>
+        </view>
+        <view class="weui-uploader__input-box {{showrzf ? '':'disnone'}}">
+          <view class="weui-uploader__input" data-img="rzf" bindtap="chooseImage"></view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='form_check'>
+    <checkbox-group bindchange='radiochange'>
+      <checkbox value="cb" />
+      <em bindtap='goxieyi' style='color:#cc935c;' class="agree">同意协会平台服务协议</em>
+    </checkbox-group>
+  </view>
+
+  <view class="button-sp-area">
+    <button style='background:#cc935c;' class="weui-btn mini-btn" formType="submit" type="primary" size="mini">提交</button>
+    <button class="weui-btn mini-btn" formType="reset" type="default" size="mini">取消</button>
+  </view>
+</form>

@@ -9,14 +9,14 @@
         <text>{{item.name}}</text>
         <!-- <image class='activity_log' src='../../images/c1.jpg'></image> -->
       </view>
-      <image class='activity_xc' mode='widthFix' src='{{item.img}}'></image>
+      <image class='activity_xc' mode='aspectFill' src='{{item.img}}'></image>
       <view class='activity_info_pane'>
         <view class='acrivity_info_title'>
-          <view class='info_left'>{{item.endTime}}</view>
+          <view class='info_left'>开始时间：{{item.startTime}}</view>
           <view class='info_right'>{{item.title}}</view>
         </view>
         <view class="progress-box">
-          <progress percent="60" active stroke-width="3" />
+          <progress percent="{{item.num / item.personNum * 100}}" active stroke-width="3" />
         </view>
         <view class='activity_state'>
           <view class='state_left'>报名人数：

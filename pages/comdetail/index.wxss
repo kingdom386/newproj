@@ -5,3 +5,8 @@
   overflow: hidden;
   font-size: 26rpx;
 }
+
+.wxParse-p {
+  position: relative;
+  font-size: 26rpx;
+}

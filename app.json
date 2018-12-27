@@ -34,7 +34,9 @@
     "pages/xieyi/index",
     "pages/mianze/index",
     "pages/kefu/index",
-    "pages/msgde/inde"
+    "pages/msgde/inde",
+    "pages/chongxinfaqi/index",
+    "pages/chongxinfaqi2/index"
   ],
   "window": {
     "navigationBarTitleText": "浙江省投融资协会",

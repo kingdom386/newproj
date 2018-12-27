@@ -92,6 +92,7 @@ page {
   display: -webkit-box;
   font-size: 24rpx;
   line-height: 40rpx;
+  height: 40rpx;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   word-break: break-all;

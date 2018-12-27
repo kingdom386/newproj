@@ -89,7 +89,7 @@ page {
   margin-top: 10rpx;
   padding: 0 10rpx;
   float: right;
-  width: 100rpx;
+  min-width: 100rpx;
   height: 40rpx;
   text-align: center;
   font-size: 24rpx;

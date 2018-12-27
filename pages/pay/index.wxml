@@ -4,10 +4,10 @@
       <view class='weui_price_box'>
         <view class='weui_txt'>支付费用</view>
         <view class='weui_price'>￥
-          <strong>{{price}}</strong>元/年</view>
+          <strong>{{price}}</strong>元</view>
       </view>
 
-      <view class="weui_pay_method">
+      <view wx:if='{{show}}' class="weui_pay_method">
         <view class='weui_left'>
           <image style='position: absolute;left:0;top:16rpx;;width: 48rpx;height: 48rpx;' src='../../images/we_pay.png'></image> 微信支付</view>
         <view class='weui_right'>
@@ -22,7 +22,7 @@
         <view class='info_txt'>户名：浙江省投融资协会</view>
         <view class='info_txt'>账号：78508100394837</view>
         <view class='info_txt'>开户行：杭州银行高新支行</view>
-        <view style='font-size: 24rpx;' class='info_txt color_red'>注:支付请备注企业名称+所购会员等级，并提供支付凭证客服，以便尽快通过会员审核</view>
+        <view style='font-size: 24rpx;' class='info_txt color_red'>注:烦请上传支付凭证（或其他相关证明图片，凭证可后续补充发送至客服），以便尽快通过审核，线下支付账户也可通过“我的-联系我们”查看；</view>
         <view class='upload_txt'>上传凭证：
           <view wx:if='{{shoupload}}' bindtap='upload' class='upload'>上传文件</view>
           <image wx:else src='{{imgSrc}}' class='preview_img'></image>

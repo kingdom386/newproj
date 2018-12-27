@@ -5,8 +5,8 @@
   <view class='my_info_panee'>
     <view class='my_img_left'>
       <view class='my_img'>
-        <image wx:if="{{userInfo.avatarUrl}}" mode='aspectFit' src='{{userInfo.avatarUrl}}'></image>
-        <image wx:else mode='aspectFit' src='../../images/c1.jpg'></image>
+        <image mode='aspectFit' src='{{userInfo.avatarUrl}}'></image>
+        <!-- <image wx:else mode='aspectFit' src='../../images/c1.jpg'></image> -->
       </view>
     </view>
     <!-- my_img_left -->

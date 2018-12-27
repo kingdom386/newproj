@@ -12,7 +12,8 @@
         <view class='list_tile'>{{item.name}}
           <!-- <i class="iconfont icon-icon-test color_blue"></i> -->
         </view>
-        <view class='list_info margin-btm20'>{{item.detail}}</view>
+        <!-- <view class='list_info margin-btm20'>{{none}}
+        </view> -->
         <view class='list_info'>{{item.label}}</view>
       </view>
     </view>

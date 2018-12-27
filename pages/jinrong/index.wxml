@@ -22,7 +22,7 @@
 
   <swiper style='height: 340rpx;' autoplay='true' circular='true' duration='500'>
     <swiper-item wx:for="{{imgData}}" wx:for-index='idx' wx:for-item='item'>
-      <image style='width: 100%' src='{{item.img}}'></image>
+      <image style='width: 750rpx;height: 340rpx;' src='{{item.img}}'></image>
     </swiper-item>
   </swiper>
 
