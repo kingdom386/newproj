@@ -40,8 +40,8 @@
 				{
 					"id": 0,
 					"name": "page",
-					"pathName": "pages/pay/index",
-					"query": "",
+					"pathName": "pages/apply/index",
+					"query": "jb=2&fee=5000",
 					"scene": "1001"
 				}
 			]

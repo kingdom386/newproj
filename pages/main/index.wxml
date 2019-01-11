@@ -9,8 +9,8 @@
   </view>
   <swiper indicator-dots='{{dots}}' indicator-active-color="rgba(255,255,255,1)" indicator-color='rgba(0, 0, 0, .3)' circular='true' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">
-      <swiper-item class="wx_swiper_item">
-        <image src="{{item}}" class="slide_image" />
+      <swiper-item bindtap="goes" data-url="{{item.url}}" class="wx_swiper_item">
+        <image src="{{item.img}}" class="slide_image" />
       </swiper-item>
     </block>
   </swiper>

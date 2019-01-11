@@ -22,7 +22,8 @@
         <view class='info_txt'>户名：浙江省投融资协会</view>
         <view class='info_txt'>账号：78508100394837</view>
         <view class='info_txt'>开户行：杭州银行高新支行</view>
-        <view style='font-size: 24rpx;' class='info_txt color_red'>注:烦请上传支付凭证（或其他相关证明图片，凭证可后续补充发送至客服），以便尽快通过审核，线下支付账户也可通过“我的-联系我们”查看；</view>
+        <view style='font-size: 24rpx;' class='info_txt color_red'>注:可上传支付凭证，或后续提交支付凭证至客服，以便尽快通过审核，线下支付账户也可通过“我的-联系我们”查看
+</view>
         <view class='upload_txt'>上传凭证：
           <view wx:if='{{shoupload}}' bindtap='upload' class='upload'>上传文件</view>
           <image wx:else src='{{imgSrc}}' class='preview_img'></image>

@@ -29,7 +29,7 @@
   <view class='user_box'>
     <view class='user_list'>
       <image class='user_icon' src='../../images/vip.png'></image>
-      <view class='user_info'>点亮会员标识</view>
+      <!-- <view class='user_info'>点亮会员标识</view> -->
       <view class='user_label'>可享受多项特权</view>
       <view bindtap='govipcenter' class='open_btn'>会员升级</view>
       <!-- <view class='user_shuoming'>

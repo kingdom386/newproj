@@ -72,7 +72,7 @@
           <view class='dj_sub'>8、对协会工作的监督权；</view>
           <view class='dj_price'>
             <i>￥</i>
-            <strong>1988</strong>元/年</view>
+            <strong>2000</strong>元/年</view>
         </swiper-item>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
@@ -85,7 +85,7 @@
           <view class='dj_sub'>7、享有专项投融或附加服务9折优惠；</view>
           <view class='dj_price'>
             <i>￥</i>
-            <strong>5988</strong>元/年</view>
+            <strong>5000</strong>元/年</view>
         </swiper-item>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
@@ -99,7 +99,7 @@
           <view class='dj_sub'>7、享有专属投融小助手7*12小时一对一服务；</view>
           <view class='dj_price'>
             <i>￥</i>
-            <strong>9988</strong>元/年</view>
+            <strong>10000</strong>元/年</view>
         </swiper-item>
         <swiper-item>
           <view class='dj_title'>会员权益</view>
@@ -111,7 +111,7 @@
           <view class='dj_sub'>6、享有专项投融或附加服务8折优惠；</view>
           <view class='dj_price'>
             <i>￥</i>
-            <strong>19888</strong>元起/年</view>
+            <strong>30000</strong>元起/年</view>
         </swiper-item>
       </block>
     </swiper>

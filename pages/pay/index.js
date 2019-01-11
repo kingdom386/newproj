@@ -143,21 +143,11 @@ Page({
         signType: obj.signType,
         paySign: obj.paySign,
         success(res) {
-          // wx.showModal({
-          //   content: '支付成功！',
-          //   success(res) {
-          //     if (res.confirm) {
-          //       wx.navigateTo({
-          //         url: '../activity/index',
-          //       })
-          //     }
-          //   }
-          // })
           wx.showToast({
             title: '支付成功！',
             icon: 'none'
           })
-          setTimeout(function () {
+          setTimeout(function() {
             wx.navigateTo({
               url: '../activity/index',
             })
@@ -179,71 +169,70 @@ Page({
     })
   },
   gomain: function(e) {
-    
     var _this = this
     console.log(_this.data.payType === '2')
     var obj = _this.data.orderId
     if (_this.data.payType === '1') {
-      if (_this.data.shoupload) {
-        wx.showToast({
-          title: '请上传凭证',
-          icon: 'none'
-        })
-      } else {
-        wx.showLoading({
-          title: '提交中...',
-        })
-        wx.request({
-          url: 'https://boss.zjifa.com.cn/member/offline',
-          data: {
-            orderId: obj,
-            paymentVoucher: _this.data.imgSrc
-          },
-          method: 'post',
-          header: {
-            'content-type': 'application/x-www-form-urlencoded'
-          },
-          success(p) {
-            if (p.data.code === 0) {
-              wx.hideLoading()
-              wx.navigateTo({
-                url: '../main/index',
-              })
-            }
+      // if (_this.data.shoupload) {
+      //   wx.showToast({
+      //     title: '请上传凭证',
+      //     icon: 'none'
+      //   })
+      // } else {
+      wx.showLoading({
+        title: '提交中...',
+      })
+      wx.request({
+        url: 'https://boss.zjifa.com.cn/member/offline',
+        data: {
+          orderId: obj,
+          paymentVoucher: _this.data.imgSrc
+        },
+        method: 'post',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(p) {
+          if (p.data.code === 0) {
+            wx.hideLoading()
+            wx.navigateTo({
+              url: '../main/index',
+            })
           }
-        })
-      }
+        }
+      })
+      // }
     }
 
     if (_this.data.payType === '2') {
       var obj = JSON.parse(_this.data.orderId)
       console.log(_this.data.payType)
-      if (_this.data.shoupload) {
-        wx.showToast({
-          title: '请上传凭证',
-          icon: 'none'
-        })
-      } else {
-        wx.showLoading({
-          title: '提交中...',
-        })
-        wx.request({
-          url: 'https://boss.zjifa.com.cn/activity/offline',
-          data: {
-            orderId: obj.orderId,
-            paymentVoucher: _this.data.imgSrc
-          },
-          method: 'get',
-          success(p) {
-            if (p.data.code === 0) {
-              wx.hideLoading()
-              wx.navigateTo({
-                url: '../main/index',
-              })
-            }
+      // if (_this.data.shoupload) {
+      //   wx.showToast({
+      //     title: '请上传凭证',
+      //     icon: 'none'
+      //   })
+      // } else {
+      wx.showLoading({
+        title: '提交中...',
+      })
+      wx.request({
+        url: 'https://boss.zjifa.com.cn/activity/offline',
+        data: {
+          orderId: obj.orderId,
+          paymentVoucher: _this.data.imgSrc
+        },
+        method: 'get',
+        success(p) {
+          if (p.data.code === 0) {
+            wx.hideLoading()
+            wx.navigateTo({
+              url: '../main/index',
+            })
           }
-        })
-      }
+        }
+      })
+      // }
     }
 
   }

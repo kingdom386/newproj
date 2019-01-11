@@ -206,7 +206,7 @@ Page({
     var _this = this
     if (!_this.data.showuser) {
       wx.showToast({
-        title: '请输入法人或授权代表',
+        title: '请输入机构名称',
         icon: 'none',
       })
       return false;

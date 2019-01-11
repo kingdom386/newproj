@@ -27,7 +27,7 @@
     <view class='box'>
       <view class='left'>
         账户名：</view>
-      <view bindtap='gocall' class='right'>浙江省投融资协会</view>
+      <view class='right'>浙江省投融资协会</view>
     </view>
     <view class='box'>
       <view class='left'>

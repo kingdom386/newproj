@@ -21,7 +21,7 @@
   <view bindtap='goliucheng' class='fixed_box iconfont icon-liucheng'></view>
 
   <swiper style='height: 340rpx;' autoplay='true' circular='true' duration='500'>
-    <swiper-item wx:for="{{imgData}}" wx:for-index='idx' wx:for-item='item'>
+    <swiper-item wx:for="{{imgData}}" bindtap="godetail" data-id="{{item.id}}" wx:for-index='idx' wx:for-item='item'>
       <image style='width: 750rpx;height: 340rpx;' src='{{item.img}}'></image>
     </swiper-item>
   </swiper>

@@ -94,19 +94,19 @@ Page({
       fee = 0
     }
     if (_this.data.curIndex === 1) {
-      fee = 1988
+      fee = 2000
     }
 
     if (_this.data.curIndex === 2) {
-      fee = 5988
+      fee = 5000
     }
 
     if (_this.data.curIndex === 3) {
-      fee = 9988
+      fee = 10000
     }
 
     if (_this.data.curIndex === 3) {
-      fee = 19888
+      fee = 30000
     }
     // 登录判断用户是否已经注册了手机号码没有注册直接跳转到注册页面
     wx.login({

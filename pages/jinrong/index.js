@@ -18,7 +18,7 @@ Page({
     wx.request({
       url: 'https://boss.zjifa.com.cn/web/findList?',
       data: {
-        position: 0
+        position: 3
       },
       success(p) {
         if (p.data.code === 0) {

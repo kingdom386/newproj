@@ -18,30 +18,30 @@ Page({
     limit: 20,
     isShow: 1,
     aa: [{
-      nickName: "wang",
-      reward: "2"
-    },
-    {
-      nickName: "wang",
-      reward: "2"
-    },
-    {
-      nickName: "wang",
-      reward: "2"
-    }
+        nickName: "wang",
+        reward: "2"
+      },
+      {
+        nickName: "wang",
+        reward: "2"
+      },
+      {
+        nickName: "wang",
+        reward: "2"
+      }
     ],
   },
-  onLoad: function () {
+  onLoad: function() {
     var _this = this
     template.tabbar("tabBar", 0, _this)
     wx.getStorage({
       key: 'isSHow',
-      success: function (res) {
+      success: function(res) {
         _this.setData({
           show: false
         })
       },
-      fail: function (res) {
+      fail: function(res) {
         _this.setData({
           show: true
         })
@@ -63,10 +63,15 @@ Page({
         if (p.data.code == 0) {
           var dt = p.data.data
           var ary = []
-          dt.map(function (e) {
-            _this.setData({
-              imgUrls: _this.data.imgUrls.concat(e.img)
-            })
+          dt.map(function(e) {
+            console.log(e);
+            ary.push(e)
+            // _this.setData({
+            //   imgUrls: _this.data.imgUrls.concat(e.img)
+            // })
+          })
+          _this.setData({
+            imgUrls: ary
           })
         } else {
           wx.showToast({
@@ -129,52 +134,52 @@ Page({
       }
     })
   },
-  changeIndicatorDots: function (e) {
+  changeIndicatorDots: function(e) {
     this.setData({
       indicatorDots: !this.data.indicatorDots
     })
   },
-  changeAutoplay: function (e) {
+  changeAutoplay: function(e) {
     this.setData({
       autoplay: !this.data.autoplay
     })
   },
-  intervalChange: function (e) {
+  intervalChange: function(e) {
     this.setData({
       interval: e.detail.value
     })
   },
-  durationChange: function (e) {
+  durationChange: function(e) {
     this.setData({
       duration: e.detail.value
     })
   },
-  govipcenter: function () {
+  govipcenter: function() {
     wx.navigateTo({
       url: '../vipcenter/index',
     })
   },
-  gojinrong: function () {
+  gojinrong: function() {
     wx.navigateTo({
       url: '../jinrong/index',
     })
   },
-  gofz: function () {
+  gofz: function() {
     wx.navigateTo({
       url: '../committee/index',
     })
   },
-  tourongfuwu: function () {
+  tourongfuwu: function() {
     wx.navigateTo({
       url: '../financing/index',
     })
   },
-  detail: function () {
+  detail: function() {
     wx.navigateTo({
       url: '../jianjie/index',
     })
   },
-  tab_change: function (e) {
+  tab_change: function(e) {
     // console.log(e.currentTarget.dataset.index)
     this.setData({
       activeIndex: e.currentTarget.dataset.index,
@@ -182,7 +187,7 @@ Page({
     })
     this.zixun()
   },
-  search: function () {
+  search: function() {
     wx.navigateTo({
       url: '../search/index',
     })
@@ -195,18 +200,18 @@ Page({
     wx.setStorage({
       key: 'isSHow',
       data: bl,
-      success: function (res) { }
+      success: function(res) {}
     })
     wx.setStorage({
       key: 'userInfo',
       data: userInfo,
-      success: function (res) { }
+      success: function(res) {}
     })
     _this.setData({
       show: false
     })
     wx.login({
-      success: function (res) {
+      success: function(res) {
         if (res.code) {
           wx.request({
             url: 'https://boss.zjifa.com.cn/member/login',
@@ -231,24 +236,29 @@ Page({
           })
         }
       },
-      fail: function (res) { },
-      complete: function (res) { },
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
-  gocompany: function () {
+  gocompany: function() {
     wx.navigateTo({
       url: '../search/index',
     })
   },
-  comdetail: function (e) {
+  comdetail: function(e) {
     wx.navigateTo({
       url: '../comdetail/index?id=' + e.currentTarget.dataset.id,
     })
   },
-  gocenter: function (e) {
+  gocenter: function(e) {
     var id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: '../zixuncenter/index?id=' + id,
+    })
+  },
+  goes: function () {
+    wx.redirectTo({
+      url: '../main/index',
     })
   }
 })

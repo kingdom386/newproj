@@ -36,7 +36,8 @@
     "pages/kefu/index",
     "pages/msgde/inde",
     "pages/chongxinfaqi/index",
-    "pages/chongxinfaqi2/index"
+    "pages/chongxinfaqi2/index",
+    "pages/out/out"
   ],
   "window": {
     "navigationBarTitleText": "浙江省投融资协会",
